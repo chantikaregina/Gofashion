@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cupon', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_cupon');
+            $table->string('code');
+            $table->enum('discount_type', ['percentage','fixed_amount']);
+            $table->integer('discount_value');
+            $table->date('date_start');
+            $table->date('date_end');
+            $table->integer('minimum_pembelian');
+            $table->integer('maksimal_pemakaian');
+            $table->integer('jumlah_pengguna');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
