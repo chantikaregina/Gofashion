@@ -20,7 +20,7 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->timestamps('tanggal_pesanan');
+            $table->timestamp('tanggal_pesanan');
             $table->enum('status_pesanan', ['pending', 'shipped', 'completed', 'canceled']);
             $table->integer('total_pembayaran');
             $table->timestamps();
