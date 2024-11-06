@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('shipping', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_pengiriman')->primary()->autoIncrement();
+            $table->integer('id_order');
+            $table->foreign('id_order')
+                  ->references('id_order')
+                  ->on('order')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+            $table->timestamps('tanggal_pengiriman');
+            $table->enum('status_pengiriman', ['pending','shipped','delivered']);
+            $table->string('nomor_pelacakan', 100);
             $table->timestamps();
         });
     }

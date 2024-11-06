@@ -12,7 +12,23 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('order_items', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_order_items')->primary()->autoIncrement();
+            $table->integer('id_order');
+            $table->foreign('id_order')
+                  ->references('id_order')
+                  ->on('order')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+            $table->integer('id_product');
+            $table->foreign('id_product')
+                ->references('id_product')
+                ->on('product')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->integer('jumlah');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

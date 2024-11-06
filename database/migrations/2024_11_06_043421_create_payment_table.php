@@ -12,8 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payment', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_pembayaran')->primary()->autoIncrement();
+            $table->integer('id_order');
+            $table->foreign('id_order')
+                  ->references('id_order')
+                  ->on('order')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+            $table->timestamps('tanggal_pembayaran');
+            $table->integer('jumlah');
+            $table->string('metode_pembayaran', 50);
+            $table->enum('status_pembayaran', ['pending','completed','failed']);
             $table->timestamps();
+        
         });
     }
 
