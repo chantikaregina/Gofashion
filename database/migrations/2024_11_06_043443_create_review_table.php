@@ -13,18 +13,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('review', function (Blueprint $table) {
-            $table->integer('id_product')->primary()->autoIncrement();
+            $table->integer('id_review')->primary()->autoIncrement();
             $table->integer('id_product');
             $table->foreign('id_product')
                 ->references('id_product')
-                ->on('id_product')
+                ->on('product')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
             $table->integer('id_customer');
             $table->foreign('id_customer')
                 ->references('id_customer')
-                ->on('id_customer')
+                ->on('customer')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
