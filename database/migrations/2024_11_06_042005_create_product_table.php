@@ -12,7 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_product')->primary()->autoIncrement();
+            $table->integer('id_category');
+            $table->foreign('id_category')
+                  ->references('id_category')
+                  ->on('category')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+            $table->string('nama_product', 50);
+            $table->text('deskripsi');
+            $table->integer('harga_product');
+            $table->integer('stock_produk');
             $table->timestamps();
         });
     }

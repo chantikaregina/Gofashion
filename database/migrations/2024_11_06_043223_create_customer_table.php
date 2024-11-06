@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customer', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_customer')->primary()->autoIncrement();
+            $table->integer('id_users');
+            $table->foreign('id_users')
+                ->references('id_users')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->string('nama_pengguna', 25);
+            $table->string('alamat_pengguna', 50);
+            $table->string('telp', 12);
             $table->timestamps();
         });
     }
