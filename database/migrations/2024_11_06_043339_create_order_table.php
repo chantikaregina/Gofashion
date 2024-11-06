@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_order')->primary()->autoIncrement();
+            $table->integer('id_customer');
+            $table->foreign('id_customer')
+                ->references('id_customer')
+                ->on('customer')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->timestamps('tanggal_pesanan');
+            $table->enum('status_pesanan', ['pending', 'shipped', 'completed', 'canceled']);
+            $table->integer('total_pembayaran');
             $table->timestamps();
         });
     }

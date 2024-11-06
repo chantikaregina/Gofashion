@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cart', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_cart')->primary()->autoIncrement();
+            $table->integer('id_customer');
+            $table->foreign('id_customer')
+                  ->references('id_customer')
+                  ->on('customer')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->timestamps();
         });
     }
