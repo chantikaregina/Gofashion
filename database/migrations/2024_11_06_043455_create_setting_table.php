@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('setting', function (Blueprint $table) {
             $table->integer('id_settings')->primary()->autoIncrement();
-            $table->string('key', 100);
-            $table->text('value');
+            $table->string('kunci_pengaturan', 100);
+            $table->text('nilai_pengaturan');
             $table->text('deskripsi');
             $table->timestamps();
         });

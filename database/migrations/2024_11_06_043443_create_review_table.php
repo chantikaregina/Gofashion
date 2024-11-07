@@ -29,7 +29,7 @@ return new class extends Migration
                 ->onUpdate('cascade');
 
             $table->integer('rating_produk');
-            $table->text('comment');
+            $table->text('komentar');
             $table->timestamps();
         });
     }

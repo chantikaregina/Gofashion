@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    //
+    protected  $table = 'setting';
+    protected  $primaryKey = 'id_setting';
+
+    protected $fillable = [
+        'kunci_pengaturan',
+        'nilai_pengaturan',
+        'deskripsi',
+    ];
 }
