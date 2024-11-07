@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('cupon', function (Blueprint $table) {
             $table->integer('id_cupon');
-            $table->string('code');
-            $table->enum('discount_type', ['percentage','fixed_amount']);
-            $table->integer('discount_value');
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->string('kode_diskon');
+            $table->enum('tipe_diskon', ['percentage','fixed_amount']);
+            $table->integer('nilai_diskon');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_akhir');
             $table->integer('minimum_pembelian');
-            $table->integer('maksimal_pemakaian');
+            $table->integer('maksimum_pemakaian');
             $table->integer('jumlah_pengguna');
             $table->boolean('status');
             $table->timestamps();
