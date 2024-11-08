@@ -15,13 +15,19 @@ class UserLoginController extends Controller
 
     public function auth(Request $request)
     {
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
 
-        $data = $request->only('username', 'password');
-        if (Auth::attempt($data)) {
-            $request->session()->regenerate();
-            return redirect('/dashboard');
-        } else {
-            return redirect()->back()->with('gagal', 'Username atau Password salah');
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }elseif ($user->role === 'user') {
+                return redirect()->route('user.dashboard');
+            }
         }
+        return redirect()->back()->with('gagal', 'Username atau Password salah');
     }
 }
