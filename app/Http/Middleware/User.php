@@ -14,12 +14,12 @@ class User
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, $role): Response
     {
-        if (!Auth::check() || Auth::user()->role !== 'user') {
-            return redirect()->route('user.login')
-                             ->withErrors(['login_error' => 'Silakan masuk untuk melanjutkan.']);
+        if (Auth::check() && Auth::user()->role === $role) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('user.login')
+                ->withErrors(['login_error' => 'Silakan masuk untuk melanjutkan.']);
     }
 }
