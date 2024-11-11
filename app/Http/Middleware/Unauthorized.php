@@ -19,6 +19,6 @@ class Unauthorized
         if (!Auth::check()) {
             return $next($request);
         }
-        return redirect()->route($role.'.dashboard');
+        return redirect()->route('admin.dashboard');
     }
 }
