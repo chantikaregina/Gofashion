@@ -19,7 +19,7 @@ class User
         if (Auth::check()) {
             return $next($request);
         }
-        return redirect()->route('user.login')
+        return redirect()->route('admin.login')
                 ->withErrors(['login_error' => 'Silakan masuk untuk melanjutkan.']);
     }
 }
