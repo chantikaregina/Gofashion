@@ -27,35 +27,35 @@
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Sweater</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Jaket</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Dress</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Celana</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jp') }}g" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Rok</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Hijab</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Blazer</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="i{{ asset('assets_main/mg/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Hoodie</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/hero-img-2.jpg') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Abaya</a>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-5.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -171,7 +171,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-5.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -193,7 +193,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-2.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -215,7 +215,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-4.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -237,7 +237,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-3.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-3.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -259,7 +259,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-1.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -281,7 +281,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-2.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -303,7 +303,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-5.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -385,7 +385,7 @@
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/fruite-item-1.jpg') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
@@ -571,7 +571,7 @@
             <div class="owl-carousel vegetable-carousel justify-content-center">
                 <div class="border border-primary rounded position-relative vesitable-item">
                     <div class="vesitable-img">
-                        <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                        <img src="{{ asset('assets_main/img/vegetable-item-6.jp') }}g" class="img-fluid w-100 rounded-top" alt="">
                     </div>
                     <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
                         style="top: 10px; right: 10px;">Vegetable</div>
@@ -716,7 +716,7 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/best-product-1.jpg') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
                                 <a href="#" class="h5">Dress Blouse</a>
