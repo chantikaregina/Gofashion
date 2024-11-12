@@ -14,15 +14,9 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/login', [UserLoginController::class, 'auth'])->name('auth');
 });
 
-<<<<<<< HEAD
 Route::middleware(['user'])->group(function () {
     Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [UserController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/profile', [UserController::class, 'profile'])->name('admin.profile');
 
 });
-=======
-Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
-
-Route::get('/', [HomeController::class, 'home'])->name('home');
->>>>>>> f032824ba70c336950c5d7ef6631bfb16d7d3698
