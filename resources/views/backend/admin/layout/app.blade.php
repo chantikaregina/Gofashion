@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GO FASHION  - @yield('title')</title>
+  <title>GOFASHION  - @yield('title')</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
@@ -19,7 +19,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <h1 style="color: #00C0F0; font-weight: 700;">GO FASHION</h1>
+            <h1 style="color: #00C0F0; font-weight: 700;">GOFASHION</h1>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -92,7 +92,7 @@
                 <span class="hide-menu">Cupon</span>
               </a>
             </li>
-    
+
         <!-- End Sidebar navigation -->
       </div>
       <!-- End Sidebar scroll-->
@@ -126,19 +126,11 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="{{ route('admin.profile') }}" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
-                    </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="{{ route('admin.logout') }}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>
