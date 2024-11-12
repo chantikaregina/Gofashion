@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\Auth\UserLoginController;
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [UserLoginController::class, 'login'])->name('login');
