@@ -42,7 +42,7 @@
               <div class="table-responsive">
                 <table class="table text-nowrap align-middle mb-0">
                   <thead>
-                    <tr class="border-2 border-bottom border-primary border-0"> 
+                    <tr class="border-2 border-bottom border-primary border-0">
                       <th scope="col" class="ps-0">No</th>
                       <th scope="col" >Kode</th>
                       <th scope="col" class="text-center">Produk</th>
@@ -57,7 +57,7 @@
                       <td>
                         <a href="javascript:void(0)" class="link-primary text-dark fw-medium d-block">10</a>
                       </td>
-                      <td class="text-center fw-medium">Rok Sepan</td>
+                      <td class="text-center fw-medium">Rok Span</td>
                       <td class="text-center fw-medium">Rp. 85.000</td>
                     </tr>
                     <tr>
@@ -77,7 +77,7 @@
                       <td>
                         <a href="javascript:void(0)" class="link-primary text-dark fw-medium d-block">4</a>
                       </td>
-                      <td class="text-center fw-medium">Dres</td>
+                      <td class="text-center fw-medium">Dress</td>
                       <td class="text-center fw-medium">Rp. 170.000</td>
                     </tr>
                     <tr>
@@ -87,7 +87,7 @@
                       <td>
                         <a href="javascript:void(0)" class="link-primary text-dark fw-medium d-block">7</a>
                       </td>
-                      <td class="text-center fw-medium">Switer Rajut</td>
+                      <td class="text-center fw-medium">Switter Rajut</td>
                       <td class="text-center fw-medium">Rp. 125.000</td>
                     </tr>
                     <tr>
@@ -114,7 +114,7 @@
               <div class="table-responsive">
                 <table class="table text-nowrap align-middle mb-0">
                   <thead>
-                    <tr class="border-2 border-bottom border-primary border-0"> 
+                    <tr class="border-2 border-bottom border-primary border-0">
                       <th scope="col" class="ps-0">No</th>
                       <th scope="col">UserName</th>
                       <th scope="col" class="text-center">FullName</th>
