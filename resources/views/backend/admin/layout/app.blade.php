@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GOFASHION  - @yield('title')</title>
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
-  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/seodashlogo.png') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
 </head>
 
 <body>
@@ -18,7 +18,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="" class="text-nowrap logo-img">
             <h1 style="color: #00C0F0; font-weight: 700;">GOFASHION</h1>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -33,7 +33,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('admin.dashboard') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-dashboard"></i>
                 </span>
@@ -45,7 +45,7 @@
               <span class="hide-menu">MENU</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('admin.category') }}" aria-expanded="false">
                 <span>
                 <i class="ti ti-category"></i>
                 </span>
@@ -53,19 +53,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('admin.product') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-brand-producthunt"></i>
                 </span>
                 <span class="hide-menu">Produk</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
-                <span>
-                <i class="ti ti-building-store"></i>
-                </span>
-                <span class="hide-menu">Produk images</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -150,13 +142,13 @@
       </div>
     </div>
   </div>
-  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/sidebarmenu.js"></script>
-  <script src="../assets/js/app.min.js"></script>
-  <script src="../assets/js/dashboard.js"></script>
+  <script src="{{ asset('../assets/libs/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('../assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('../assets/libs/simplebar/dist/simplebar.js') }}"></script>
+  <script src="{{ asset('../assets/js/sidebarmenu.js') }}"></script>
+  <script src="{{ asset('../assets/js/app.min.js') }}"></script>
+  <script src="{{ asset('../assets/js/dashboard.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
 
