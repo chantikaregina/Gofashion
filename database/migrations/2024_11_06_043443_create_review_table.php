@@ -21,13 +21,6 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->integer('id_customer');
-            $table->foreign('id_customer')
-                ->references('id_customer')
-                ->on('customer')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
             $table->integer('rating_produk');
             $table->text('komentar');
             $table->timestamps();
