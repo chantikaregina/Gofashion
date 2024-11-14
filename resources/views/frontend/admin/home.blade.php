@@ -139,7 +139,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                    <span class="text-dark" style="width: 130px;">Abaya</span>
+                                    <span class="text-dark" style="width: 130px;">Sepatu</span>
                                 </a>
                             </li>
                         </ul>
@@ -322,73 +322,22 @@
                             </div>
                         </div>
                     </div>
+
                     <div id="tab-2" class="tab-pane fade show p-0">
                         <div class="row g-4">
                             <div class="col-lg-12">
                                 <div class="row g-4">
                                     <div class="col-md-6 col-lg-4 col-xl-3">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top"
-                                                    alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                style="top: 10px; left: 10px;">Celana</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Grapes</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                    eiusmod te incididunt</p>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                    <a href="#"
-                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top"
-                                                    alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                style="top: 10px; left: 10px;">Rok</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Raspberries</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                    eiusmod te incididunt</p>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                    <a href="#"
-                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative sweater-item">
                                             <div class="sweater-img">
-                                                <img src="{{ asset('assets_main/img/sweater-1.png') }}" class="img-fluid w-100 rounded-top"
+                                                <img src="{{ asset('assets_main/img/sweater.7.png') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                                 style="top: 10px; left: 10px;">Sweater</div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                 <h4>Sweater</h4>
-                                                <p>Sweater Shall Rajut </p>
+                                                <p>Sweater Rajut Line </p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
                                                     <p class="text-dark fs-5 fw-bold mb-0">Rp. 200.000</p>
                                                     <a href="#"
@@ -400,19 +349,81 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4 col-xl-3">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="img/fruite-item-6.jpg" class="img-fluid w-100 rounded-top"
+                                        <div class="rounded position-relative sweater-item">
+                                            <div class="sweater-img">
+                                                <img src="{{ asset('assets_main/img/sweater.6.png') }}" class="img-fluid w-100 rounded-top"
                                                     alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                style="top: 10px; left: 10px;">Jaket</div>
+                                                style="top: 10px; left: 10px;">Sweater</div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Apple</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                    eiusmod te incididunt</p>
+                                                <h4>Sweater</h4>
+                                                <p>Sweater Rajut </p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 320.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative sweater-item">
+                                            <div class="sweater-img">
+                                                <img src="{{ asset('assets_main/img/sweater.4.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Sweater</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Sweater</h4>
+                                                <p>Sweater Rajut </p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 250.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative sweater-item">
+                                            <div class="sweater-img">
+                                                <img src="{{ asset('assets_main/img/sweater.5.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Sweater</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Sweater</h4>
+                                                <p>Sweater Wanita Rajut</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 300.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative sweater-item">
+                                            <div class="sweater-img">
+                                                <img src="{{ asset('assets_main/img/sweater.9.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Sweater</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Sweater</h4>
+                                                <p>Sweater Syall</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 250.000</p>
                                                     <a href="#"
                                                         class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                             class="fa fa-shopping-bag me-2 text-primary"></i> Add to
@@ -425,6 +436,80 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="row g-4">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative jaket-item">
+                                            <div class="jaket-img">
+                                                <img src="{{ asset('assets_main/img/jaket.1.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Jaket</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Jaket</h4>
+                                                <p>Jaket Wanita Kasual </p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 230.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative jaket-item">
+                                            <div class="jaket-img">
+                                                <img src="{{ asset('assets_main/img/jaket.2.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Jaket</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Apple</h4>
+                                                <p> Jaket Kasual Polos</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 230.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative jaket-item">
+                                            <div class="jaket-img">
+                                                <img src="{{ asset('assets_main/img/jaket.3.png') }}" class="img-fluid w-100 rounded-top"
+                                                    alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">Jaket</div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>Apple</h4>
+                                                <p> Jaket Kasual</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. 230.000</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div id="tab-4" class="tab-pane fade show p-0">
                         <div class="row g-4">
                             <div class="col-lg-12">
