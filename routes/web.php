@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\UserLoginController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -22,6 +23,7 @@ Route::middleware(['user'])->group(function () {
     Route::get('/admin/logout', [UserController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/profile', [UserController::class, 'profile'])->name('admin.profile');
 
+    Route::get('/admin/product', [ProductController::class, 'product'])->name('admin.product');
     Route::get('/admin/category', [CategoryController::class, 'category'])->name('admin.category');
     Route::get('/admin/category/tambah', [CategoryController::class, 'create'])->name('admin.category.create');
     Route::post('/admin/category/tambah', [CategoryController::class, 'store'])->name('admin.category.store');

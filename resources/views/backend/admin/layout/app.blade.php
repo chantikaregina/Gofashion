@@ -18,7 +18,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="" class="text-nowrap logo-img">
             <h1 style="color: #00C0F0; font-weight: 700;">GOFASHION</h1>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -53,19 +53,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('admin.product') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-brand-producthunt"></i>
                 </span>
                 <span class="hide-menu">Produk</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
-                <span>
-                <i class="ti ti-building-store"></i>
-                </span>
-                <span class="hide-menu">Produk images</span>
               </a>
             </li>
             <li class="sidebar-item">
