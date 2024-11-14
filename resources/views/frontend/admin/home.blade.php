@@ -571,7 +571,7 @@
             <div class="owl-carousel vegetable-carousel justify-content-center">
                 <div class="border border-primary rounded position-relative vesitable-item">
                     <div class="vesitable-img">
-                        <img src="{{ asset('assets_main/img/vegetable-item-6.jpg') }}" class="img-fluid w-100 rounded-top" alt="">
+                        <img src="{{ asset('assets_main/img/vegetable-item-6.jpg') }}" class="img-fluid w-100 rounded-top" alt="`">
                     </div>
                     <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
                         style="top: 10px; right: 10px;">Vegetable</div>
