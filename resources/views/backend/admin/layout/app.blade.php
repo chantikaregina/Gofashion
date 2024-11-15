@@ -65,11 +65,11 @@
                 <span>
                 <i class="ti ti-brand-onedrive"></i>
                 </span>
-                <span class="hide-menu">Riview</span>
+                <span class="hide-menu">Review</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('admin.setting') }}" aria-expanded="false">
                 <span>
                 <i class="ti ti-settings"></i>
                 </span>
