@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,5 +26,28 @@ class UserController extends Controller
     public function profile() {
         $profile = Auth::user();
         return view('backend.admin.profile', compact('profile'));
+    }
+
+    public function update(Request $request)
+    {
+        $profile = Auth::user()->id_users;
+        $user = User::find($profile);
+
+        $request->validate([
+            'username' => 'required',
+            'password' => 'nullable|min:6',
+            'name' => 'required',
+
+        ]);
+
+        $user->update([
+            'username' => $request->username,
+            'password' => $request->filled('password') ? Hash::make($request->password) : $user->password,
+            'name' => $request->name,
+        ]);
+
+        return redirect()->back()->with('success', 'Data Anda Berhasil di Update');
+
+
     }
 }

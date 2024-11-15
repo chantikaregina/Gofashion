@@ -7,13 +7,13 @@
         <div class="col-6">
             <div class="bg-light rounded h-100 p-4">
                 @if (session('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success text-center">
                         {{ session('success') }}
                     </div>
                 @endif
                 <div class="d-flex align-items-center justify-content-center ms-4 mb-4">
                 </div>
-                <form action="{{ route('admin.profile') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -44,6 +44,7 @@
                                 @enderror
                             </div>
                             <div class="text-center">
+                                <br>
                                 <button type="submit" class="btn btn-primary">simpan</button>
                             </div>
                 </form>

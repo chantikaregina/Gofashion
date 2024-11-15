@@ -22,7 +22,7 @@
                             <div class="card-body">
                                 <p class="text-center">Welcome To Gofashion</p>
                                 @if ($errors->has('login_error'))
-                                    <div class="alert alert-danger">
+                                    <div class="alert alert-danger text-center">
                                         {{ $errors->first('login_error') }}
                                     </div>
                                 @endif
@@ -32,21 +32,21 @@
                                         <label for="exampleInputEmail1" class="form-label">Username</label>
                                         <input type="text" class="form-control" name="username"
                                             id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            <div class="text-danger">
-                                                @error('username')
+                                        <div class="text-danger">
+                                            @error('username')
                                                 {{ $message }}
-                                                @enderror
-                                            </div>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
                                         <input type="password" class="form-control" name="password"
                                             id="exampleInputPassword1">
-                                            <div class="text-danger">
-                                                @error('password')
+                                        <div class="text-danger">
+                                            @error('password')
                                                 {{ $message }}
-                                                @enderror
-                                            </div>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign In</button>
                                 </form>

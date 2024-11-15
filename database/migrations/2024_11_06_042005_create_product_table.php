@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('nama_product', 50);
             $table->text('deskripsi');
             $table->integer('harga_product');
-            $table->integer('stock_produk');
+            $table->integer('stock_product');
             $table->string('foto', 50);
             $table->timestamps();
         });

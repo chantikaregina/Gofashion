@@ -14,7 +14,7 @@
                         </h5>
                     </div>
                     <div class="card-footer p-1 d-flex justify-content-center" style="background-color: #00ABD6;">
-                      <a href="">
+                      <a href="{{ route('admin.product') }}">
                         <small style="color: white; font-size: 15px;" class="d-flex align-items-center">Lihat Detail Produk <i class="ti ti-chevron-right"></i></small>
                       </a>
                     </div>
