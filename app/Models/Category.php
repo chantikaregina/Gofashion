@@ -13,4 +13,8 @@ class Category extends Model
         'nama_category',
         'deskripsi',
     ];
+
+    public function product() {
+        return $this->hasMany(Product::class, 'id_category', 'id_category');
+    }
 }

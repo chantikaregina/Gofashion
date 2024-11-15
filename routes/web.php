@@ -23,8 +23,10 @@ Route::middleware(['user'])->group(function () {
 
     Route::get('/admin/logout', [UserController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/profile', [UserController::class, 'profile'])->name('admin.profile');
+    Route::put('/admin/profile/update', [UserController::class, 'update'])->name('admin.profile.update');
 
     Route::get('/admin/product', [ProductController::class, 'product'])->name('admin.product');
+
     Route::get('/admin/category', [CategoryController::class, 'category'])->name('admin.category');
     Route::get('/admin/category/tambah', [CategoryController::class, 'create'])->name('admin.category.create');
     Route::post('/admin/category/tambah', [CategoryController::class, 'store'])->name('admin.category.store');
@@ -35,6 +37,12 @@ Route::middleware(['user'])->group(function () {
     Route::get('/admin/setting', [SettingController::class, 'setting'])->name('admin.setting');
     Route::get('/admin/setting/edit/{id_setting}', [SettingController::class, 'edit'])->name('admin.setting.edit');
     Route::put('/admin/setting/edit/{id_setting}', [SettingController::class, 'update'])->name('admin.setting.update');
+
+    Route::get('/admin/product/tambah', [ProductController::class, 'create'])->name('admin.product.create');
+    Route::post('/admin/product/tambah', [ProductController::class, 'store'])->name('admin.product.store');
+    Route::get('/admin/product/edit/{id_product}', [ProductController::class, 'edit'])->name('admin.product.edit');
+    Route::put('/admin/product/edit/{id_product}', [ProductController::class, 'update'])->name('admin.product.update');
+    Route::put('/admin/product/delete/{id_product}', [ProductController::class, 'delete'])->name('admin.product.delete');
 
 
 });
