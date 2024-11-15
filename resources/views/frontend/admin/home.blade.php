@@ -630,7 +630,7 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="{{ asset('assets_main/img/best-product-1.jpg') }}" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/dress-satu.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
                                 <a href="#" class="h5">Dress Blouse</a>
@@ -641,7 +641,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 240.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -652,10 +652,10 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-2.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/sweater-1.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Sweater Polo</a>
+                                <a href="#" class="h5">Sweater Rajut</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
@@ -663,7 +663,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 200.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -674,10 +674,10 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-3.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/celana-1.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Loose Pants</a>
+                                <a href="#" class="h5">Celana Kasual</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
@@ -685,7 +685,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 200.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -696,7 +696,7 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-4.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/jaket-satu.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
                                 <a href="#" class="h5">Jaket Varsity</a>
@@ -707,7 +707,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 230.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -718,10 +718,10 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-5.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/rok-satu.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Rok Serut</a>
+                                <a href="#" class="h5">Rok Maksi</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
@@ -729,7 +729,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 220.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -740,10 +740,10 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="img/best-product-6.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/blazer-satu.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="#" class="h5">Kulot Jeans</a>
+                                <a href="#" class="h5">Blazer</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
@@ -751,7 +751,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <h4 class="mb-3">3.12 $</h4>
+                                <h4 class="mb-3">Rp 230.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
@@ -760,7 +760,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
-                        <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{ asset('assets_main/img/rok-1.png') }}" class="img-fluid rounded" alt="">
                         <div class="py-4">
                             <a href="#" class="h5">Rok Span</a>
                             <div class="d-flex my-3 justify-content-center">
@@ -770,7 +770,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="mb-3">3.12 $</h4>
+                            <h4 class="mb-3">Rp 220.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
@@ -778,7 +778,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
-                        <img src="img/fruite-item-2.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{ asset('assets_main/img/sweater.6.png') }}" class="img-fluid rounded" alt="">
                         <div class="py-4">
                             <a href="#" class="h5">Sweater Rajut</a>
                             <div class="d-flex my-3 justify-content-center">
@@ -788,7 +788,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="mb-3">3.12 $</h4>
+                            <h4 class="mb-3">Rp 200.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
@@ -796,9 +796,9 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
-                        <img src="img/fruite-item-3.jpg" class="img-fluid rounded" alt="">
+                        <img src="{{ asset('assets_main/img/jaket.3.png') }}" class="img-fluid rounded" alt="">
                         <div class="py-4">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Jaket Kasual Panjang</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -806,7 +806,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="mb-3">3.12 $</h4>
+                            <h4 class="mb-3">Rp 230.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
@@ -814,9 +814,9 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
-                        <img src="img/fruite-item-4.jpg" class="img-fluid rounded" alt="">
-                        <div class="py-2">
-                            <a href="#" class="h5">Organic Tomato</a>
+                        <img src="{{ asset('assets_main/img/sweater.9.png') }}" class="img-fluid rounded" alt="">
+                        <div class="py-4">
+                            <a href="#" class="h5">Sweater Syall</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -824,7 +824,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="mb-3">3.12 $</h4>
+                            <h4 class="mb-3">Rp 200.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
