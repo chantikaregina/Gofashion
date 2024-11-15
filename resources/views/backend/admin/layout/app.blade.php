@@ -76,14 +76,6 @@
                 <span class="hide-menu">Setting</span>
               </a>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                <span>
-                <i class="ti ti-discount"></i>
-                </span>
-                <span class="hide-menu">Cupon</span>
-              </a>
-            </li>
 
         <!-- End Sidebar navigation -->
       </div>
