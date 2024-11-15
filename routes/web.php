@@ -23,10 +23,7 @@ Route::middleware(['user'])->group(function () {
 
     Route::get('/admin/logout', [UserController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/profile', [UserController::class, 'profile'])->name('admin.profile');
-<<<<<<< HEAD
     Route::put('/admin/profile/update', [UserController::class, 'update'])->name('admin.profile.update');
-=======
->>>>>>> 2b6255ce8a2fd09dfd9f2e5b819e6a61dd8e6495
 
     Route::get('/admin/product', [ProductController::class, 'product'])->name('admin.product');
 
