@@ -1,4 +1,4 @@
-@extends('frontend.admin.layout.app')
+@extends('frontend.layout.app')
 
 @section('title', 'Home')
 
