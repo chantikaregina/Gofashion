@@ -45,7 +45,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/edit/{id_product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id_product}', [ProductController::class, 'delete'])->name('product.delete');
 
-
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
