@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'Setting')
 
@@ -32,7 +32,7 @@
                             <td>{{ $setting->value }}</td>
                             <td>{{ $setting->deskripsi }}</td>
                             <td>
-                                <a href="{{ route('admin.setting.edit', $setting->id_setting) }}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{ route('setting.edit', $setting->id_setting) }}" class="btn btn-primary btn-sm">Edit</a>
                             </td>
                         </tr>
                         @endforeach

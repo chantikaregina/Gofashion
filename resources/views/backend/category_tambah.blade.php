@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'Tambah Category')
 
@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">TAMBAH CATEGORY</h6>
-            <form action="{{ route('admin.category.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="nama_category" class="form-label">Nama Category</label>

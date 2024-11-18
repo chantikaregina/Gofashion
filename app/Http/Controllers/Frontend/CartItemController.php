@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class CartItemController extends Controller
 {
-    public function review()
+    public function cartitem()
     {
-        return view('frontend.admin.review');
+        return view('frontend.admin.cartitem');
     }
 }
