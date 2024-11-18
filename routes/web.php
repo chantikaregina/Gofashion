@@ -43,7 +43,7 @@ Route::middleware(['user'])->group(function () {
     Route::post('/admin/product/tambah', [ProductController::class, 'store'])->name('admin.product.store');
     Route::get('/admin/product/edit/{id_product}', [ProductController::class, 'edit'])->name('admin.product.edit');
     Route::put('/admin/product/edit/{id_product}', [ProductController::class, 'update'])->name('admin.product.update');
-    Route::put('/admin/product/delete/{id_product}', [ProductController::class, 'delete'])->name('admin.product.delete');
+    Route::get('/admin/product/delete/{id_product}', [ProductController::class, 'delete'])->name('admin.product.delete');
 
 
 });
