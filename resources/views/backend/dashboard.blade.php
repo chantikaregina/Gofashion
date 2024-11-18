@@ -14,7 +14,7 @@
         </h5>
       </div>
       <div class="card-footer p-1 d-flex justify-content-center" style="background-color: #00ABD6;">
-        <a href="">
+        <a href="{{ route('product') }}">
           <small style="color: white; font-size: 15px;" class="d-flex align-items-center">Lihat Detail Produk <i class="ti ti-chevron-right"></i></small>
         </a>
       </div>
@@ -25,12 +25,12 @@
       <div class="card-body p-3">
         <h5 class="card-title d-flex align-items-center">
           <h1 style="color: white;">2</h1>
-          <small style="color: white; font-size: 15px;">Admin</small>
+          <small style="color: white; font-size: 15px;">Pengguna</small>
         </h5>
       </div>
       <div class="card-footer p-1 d-flex justify-content-center" style="background-color:  #DD5F4C;">
         <a href="">
-          <small style="color: white; font-size: 15px;" class="d-flex align-items-center">Lihat Detail Admin <i class="ti ti-chevron-right"></i></small>
+          <small style="color: white; font-size: 15px;" class="d-flex align-items-center">Lihat Detail Pengguna <i class="ti ti-chevron-right"></i></small>
         </a>
       </div>
     </div>
@@ -110,7 +110,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Data Admin</h5>
+        <h5 class="card-title">Data Pengguna</h5>
         <div class="table-responsive">
           <table class="table text-nowrap align-middle mb-0">
             <thead>
