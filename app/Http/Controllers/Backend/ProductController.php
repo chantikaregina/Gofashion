@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -77,9 +78,13 @@ class ProductController extends Controller
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $foto = null;
+        $foto = $product->foto;
 
         if ($request->hasFile('foto')) {
+            if ($foto)  {
+                Storage::disk('public')->delete($foto);
+            }
+
             $uniqueFile = uniqid() . '_' . $request->file('foto')->getClientOriginalName();
 
             $request->file('foto')->storeAs('foto_product', $uniqueFile, 'public');

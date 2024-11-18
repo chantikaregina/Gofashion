@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontend\CartItemController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\Frontend\ReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +27,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 
-    Route::get('/product', [ProductController::class, 'product'])->name('product');
-
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::get('/category/tambah', [CategoryController::class, 'create'])->name('category.create');
     Route::post('/category/tambah', [CategoryController::class, 'store'])->name('category.store');
@@ -39,12 +38,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/setting/edit/{id_setting}', [SettingController::class, 'edit'])->name('setting.edit');
     Route::put('/setting/edit/{id_setting}', [SettingController::class, 'update'])->name('setting.update');
 
+    Route::get('/product', [ProductController::class, 'product'])->name('product');
     Route::get('/product/tambah', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/tambah', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/edit/{id_product}', [ProductController::class, 'edit'])->name('product.edit');
     Route::put('/product/edit/{id_product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id_product}', [ProductController::class, 'delete'])->name('product.delete');
-
 
 });
 
