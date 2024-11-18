@@ -11,12 +11,12 @@ class CategoryController extends Controller
     public function category()
     {
         $categorys = Category::all();
-        return view('backend.admin.category', compact('categorys'));
+        return view('backend.category', compact('categorys'));
     }
 
     public function create()
     {
-        return view('backend.admin.category_tambah');
+        return view('backend.category_tambah');
     }
 
     public function store(Request $request)
@@ -31,7 +31,7 @@ class CategoryController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('admin.category')->with('success', 'Category Berhasil di Tambah.');
+        return redirect()->route('category')->with('success', 'Category Berhasil di Tambah.');
     }
 
     public function edit(string $id)
@@ -40,7 +40,7 @@ class CategoryController extends Controller
         if (!$category) {
             return back();
         }
-        return view('backend.admin.category_edit', compact('category'));
+        return view('backend.category_edit', compact('category'));
     }
 
     public function update(Request $request, string $id)
@@ -58,7 +58,7 @@ class CategoryController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('admin.category')->with('succes', 'Category Berhasil di Update.');
+        return redirect()->route('category')->with('succes', 'Category Berhasil di Update.');
     }
 
     public function delete(Request $request, $id)
@@ -67,6 +67,6 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        return redirect()->route('admin.category')->with('success', 'Category Berhasil di Hapus.');
+        return redirect()->route('category')->with('success', 'Category Berhasil di Hapus.');
     }
 }

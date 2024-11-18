@@ -3,8 +3,11 @@
 use App\Http\Controllers\Auth\UserLoginController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\CartItemController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\Frontend\ReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,21 +20,33 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/login', [UserLoginController::class, 'auth'])->name('auth');
 });
 
-Route::middleware(['user'])->group(function () {
-    Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/admin/logout', [UserController::class, 'logout'])->name('admin.logout');
-    Route::get('/admin/profile', [UserController::class, 'profile'])->name('admin.profile');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 
-    Route::get('/admin/product', [ProductController::class, 'product'])->name('admin.product');
-    Route::get('/admin/category', [CategoryController::class, 'category'])->name('admin.category');
-    Route::get('/admin/category/tambah', [CategoryController::class, 'create'])->name('admin.category.create');
-    Route::post('/admin/category/tambah', [CategoryController::class, 'store'])->name('admin.category.store');
-    Route::get('/admin/category/edit/{id_category}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-    Route::put('/admin/category/edit/{id_category}', [CategoryController::class, 'update'])->name('admin.category.update');
-    Route::get('/admin/category/delete/{id}', [CategoryController::class, 'delete'])->name('admin.category.delete');
+    Route::get('/category', [CategoryController::class, 'category'])->name('category');
+    Route::get('/category/tambah', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category/tambah', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/edit/{id_category}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('/category/edit/{id_category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
+    Route::get('/setting', [SettingController::class, 'setting'])->name('setting');
+    Route::get('/setting/edit/{id_setting}', [SettingController::class, 'edit'])->name('setting.edit');
+    Route::put('/setting/edit/{id_setting}', [SettingController::class, 'update'])->name('setting.update');
+
+    Route::get('/product', [ProductController::class, 'product'])->name('product');
+    Route::get('/product/tambah', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/tambah', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/edit/{id_product}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product/edit/{id_product}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/delete/{id_product}', [ProductController::class, 'delete'])->name('product.delete');
 
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/cartitem', [CartItemController::class, 'cartitem'])->name('cartitem');
+Route::get('/review', [ReviewController::class, 'review'])->name('review');

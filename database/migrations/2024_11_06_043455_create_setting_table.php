@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('setting', function (Blueprint $table) {
-            $table->integer('id_settings')->primary()->autoIncrement();
-            $table->string('kunci_pengaturan', 100);
-            $table->text('nilai_pengaturan');
+            $table->integer('id_setting')->primary()->autoIncrement();
+            $table->string('key', 100);
+            $table->text('value');
             $table->text('deskripsi');
             $table->timestamps();
         });
