@@ -55,18 +55,18 @@ class ProductController extends Controller
         return redirect()->route('product')->with('success', 'Product Berhasil di Tambah.');
     }
 
-    public function edit(string $id)
+    public function edit(string $id_product)
     {
-        $category = Category::find($id);
-        if (!$category) {
+        $categorys = Category::all();
+        $product = Product::find($id_product);
+        if (!$product) {
             return back();
         }
-        return view('backend.product_edit', compact('product'));
+        return view('backend.product_edit', compact('categorys','product'));
     }
 
     public function update(Request $request, string $id)
     {
-
         $product = Product::find($id);
 
         $request->validate([

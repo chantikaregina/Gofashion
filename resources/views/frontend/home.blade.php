@@ -1208,7 +1208,11 @@
     </div>
     <!-- Fruits Shop End-->
 
+<<<<<<< HEAD:resources/views/frontend/admin/home.blade.php
+   <!-- Bestsaler Product Start -->
+=======
     <!-- Bestsaler Product Start -->
+>>>>>>> 2eacd564e7658831b762697bf8843c9dfcba368d:resources/views/frontend/home.blade.php
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
