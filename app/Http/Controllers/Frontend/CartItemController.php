@@ -9,6 +9,6 @@ class CartItemController extends Controller
 {
     public function cartitem()
     {
-        return view('frontend.admin.cartitem');
+        return view('frontend.cartitem');
     }
 }
