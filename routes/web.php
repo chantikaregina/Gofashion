@@ -36,7 +36,6 @@ Route::middleware(['user'])->group(function () {
     Route::get('/admin/setting/edit/{id_setting}', [SettingController::class, 'edit'])->name('admin.setting.edit');
     Route::put('/admin/setting/edit/{id_setting}', [SettingController::class, 'update'])->name('admin.setting.update');
 
-
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
