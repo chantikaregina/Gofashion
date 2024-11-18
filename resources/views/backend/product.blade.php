@@ -1,6 +1,6 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
-@section('title', 'Category')
+@section('title', 'Product')
 
 @section('content')
 
@@ -14,33 +14,41 @@
                 </div>
             </div>
             @endif
-            <h6 class="mb-4">Category</h6>
+            <h6 class="mb-4">Product</h6>
             <div class="table-responsive">
                 <table class="table" id="category">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Kategori</th>
+                            <th scope="col">Nama Product</th>
                             <th scope="col">Deskripsi</th>
+                            <th scope="col">Harga Product</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Foto</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categorys as $category)
+                        @foreach ($products as $product)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $category->nama_category }}</td>
-                            <td>{{ $category->deskripsi }}</td>
+                            <td>{{ $product->category->nama_category }}</td>
+                            <td>{{ $product->nama_product }}</td>
+                            <td>{{ $product->deskripsi }}</td>
+                            <td>{{ $product->harga_product }}</td>
+                            <td>{{ $product->stock_product }}</td>
+                            <td>{{ $product->foto }}</td>
                             <td>
-                                <a href="{{ route('admin.category.edit', $category->id_category) }}" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="{{ route('admin.category.delete', $category->id_category) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
+                                <a href="{{ route('product.edit', $product->id_product) }}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{ route('product.update', $product->id_product) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <div class="text-center">
-                    <a href="{{ route('admin.category.create') }}" class="btn btn-primary btn-sm">Tambah</a>
+                    <a href="{{ route('product.create') }}" class="btn btn-primary btn-sm">Tambah</a>
                 </div>
             </div>
         </div>
@@ -49,7 +57,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#category').DataTable();
+        $('#product').DataTable();
     });
 </script>
 

@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'profile')
 
@@ -13,7 +13,7 @@
                 @endif
                 <div class="d-flex align-items-center justify-content-center ms-4 mb-4">
                 </div>
-                <form action="{{ route('admin.profile') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('profile') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">

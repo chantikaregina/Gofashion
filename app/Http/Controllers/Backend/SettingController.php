@@ -11,7 +11,7 @@ class SettingController extends Controller
     public function setting()
     {
         $settings = Setting::all();
-        return view('backend.admin.setting', compact('settings'));
+        return view('backend.setting', compact('settings'));
     }
 
     public function edit(string $id)
@@ -20,7 +20,7 @@ class SettingController extends Controller
         if (!$setting) {
             return back();
         }
-        return view('backend.admin.setting_edit', compact('setting'));
+        return view('backend.setting_edit', compact('setting'));
     }
 
     public function update(Request $request, string $id)
@@ -40,7 +40,7 @@ class SettingController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('admin.setting')->with('succes', 'Setting Berhasil di Update.');
+        return redirect()->route('setting')->with('succes', 'Setting Berhasil di Update.');
     }
 
 

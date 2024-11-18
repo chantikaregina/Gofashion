@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function dashboard()
     {
-        return view('backend.admin.dashboard');
+        return view('backend.dashboard');
     }
 
     public function logout(Request $request)
@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function profile() {
         $profile = Auth::user();
-        return view('backend.admin.profile', compact('profile'));
+        return view('backend.profile', compact('profile'));
     }
 
     public function update(Request $request)

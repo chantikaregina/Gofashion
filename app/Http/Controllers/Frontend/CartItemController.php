@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class CartItemController extends Controller
 {
-    //
+    public function cartitem()
+    {
+        return view('frontend.admin.cartitem');
+    }
 }

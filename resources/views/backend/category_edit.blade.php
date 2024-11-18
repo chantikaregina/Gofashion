@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'Edit Category')
 
@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">EDIT CATEGORY</h6>
-            <form action="{{ route('admin.category.update', $category->id_category) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('category.update', $category->id_category) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
