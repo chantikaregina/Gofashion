@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'Edit Product')
 
@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">EDIT PRODUCT</h6>
-            <form action="{{ route('admin.product.update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('product.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="nama_product" class="form-label">Nama Product</label>

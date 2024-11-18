@@ -1,4 +1,4 @@
-@extends('backend.admin.layout.app')
+@extends('backend.layout.app')
 
 @section('title', 'Edit Setting')
 
@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">EDIT SETTING</h6>
-            <form action="{{ route('admin.setting.update', $setting->id_setting) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('setting.update', $setting->id_setting) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">

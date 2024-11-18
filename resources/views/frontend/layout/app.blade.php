@@ -66,8 +66,8 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="{{ route('admin.cartitem') }}" class="dropdown-item">Keranjang</a>
-                                <a href="{{ route('admin.review') }}" class="dropdown-item">Review</a>
+                                <a href="{{ route('cartitem') }}" class="dropdown-item">Keranjang</a>
+                                <a href="{{ route('review') }}" class="dropdown-item">Review</a>
                             </div>
                         </div>
                     </div>

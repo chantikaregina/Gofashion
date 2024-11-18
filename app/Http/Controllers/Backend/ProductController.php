@@ -12,13 +12,13 @@ class ProductController extends Controller
     public function product()
     {
         $products = Product::all();
-        return view('backend.admin.product', compact('products'));
+        return view('backend.product', compact('products'));
     }
 
     public function create()
     {
         $categorys = Category::all();
-        return view('backend.admin.product_tambah', compact('categorys'));
+        return view('backend.product_tambah', compact('categorys'));
     }
 
     public function store(Request $request)
@@ -51,7 +51,7 @@ class ProductController extends Controller
             'foto' => $foto,
         ]);
 
-        return redirect()->route('admin.product')->with('success', 'Product Berhasil di Tambah.');
+        return redirect()->route('product')->with('success', 'Product Berhasil di Tambah.');
     }
 
     public function edit(string $id)
@@ -60,7 +60,7 @@ class ProductController extends Controller
         if (!$category) {
             return back();
         }
-        return view('backend.admin.product_edit', compact('product'));
+        return view('backend.product_edit', compact('product'));
     }
 
     public function update(Request $request, string $id)
@@ -96,7 +96,7 @@ class ProductController extends Controller
             'foto' => $foto,
         ]);
 
-        return redirect()->route('admin.product')->with('succes', 'Product Berhasil di Update.');
+        return redirect()->route('product')->with('succes', 'Product Berhasil di Update.');
     }
 
     public function delete(Request $request, $id)
@@ -105,7 +105,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->route('admin.product')->with('success', 'Product Berhasil di Hapus.');
+        return redirect()->route('product')->with('success', 'Product Berhasil di Hapus.');
     }
 
 
