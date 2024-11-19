@@ -38,10 +38,12 @@
                             <td>{{ $product->deskripsi }}</td>
                             <td>{{ $product->harga_product }}</td>
                             <td>{{ $product->stock_product }}</td>
-                            <td>{{ $product->foto }}</td>
+                            <td>
+                                <img src="{{ asset('storage/'.$product->foto) }}" alt="" width="30">
+                            </td>
                             <td>
                                 <a href="{{ route('product.edit', $product->id_product) }}" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="{{ route('product.update', $product->id_product) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
+                                <a href="{{ route('product.delete', $product->id_product) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
                             </td>
                         </tr>
                         @endforeach
