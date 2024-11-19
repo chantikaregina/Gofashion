@@ -102,65 +102,94 @@
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill"
-                                    href="#tab-1">
+                                    data-bs-target="#tab-0">
                                     <span class="text-dark" style="width: 130px;">Semua Produk</span>
                                 </a>
                             </li>
                             @foreach ($categorys as $category)
                                 <li class="nav-item">
                                     <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                        href="#tab-2">
+                                        data-bs-target="#tab-{{ $category->id_category }}">
                                         <span class="text-dark"
                                             style="width: 130px;">{{ $category->nama_category }}</span>
                                     </a>
                                 </li>
                             @endforeach
+
                         </ul>
                     </div>
                 </div>
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <!-- Semua Produk -->
+                    <div id="tab-0" class="tab-pane fade show active">
                         <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    @foreach ($products as $product)
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative sweater-item">
-                                                <div class="sweater-img">
-                                                    <img src="{{ asset('assets_main/img/sweater-1.png') }}"
-                                                        class="img-fluid w-100 rounded-top" alt="">
-                                                </div>
-                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                    style="top: 10px; left: 10px;">{{ $product->category->nama_category }}</div>
-                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4>{{ $product->nama_product }}</h4>
-                                                    <p>{{ $product->deskripsi }}</p>
-                                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                                        <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ $product->harga_product }}</p>
-                                                        <a href="#"
-                                                            class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                            cart</a>
-                                                    </div>
+                            @foreach ($products as $product)
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="rounded position-relative sweater-item">
+                                        <div class="sweater-img">
+                                            <img src="{{ asset('assets_main/img/sweater-1.png') }}"
+                                                class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; left: 10px;">{{ $product->category->nama_category }}</div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>{{ $product->nama_product }}</h4>
+                                            <p>{{ $product->deskripsi }}</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ $product->harga_product }}
+                                                </p>
+                                                <a href="#"
+                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                    cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Produk Berdasarkan Kategori -->
+                    @foreach ($categorys as $category)
+                        <div id="tab-{{ $category->id_category }}" class="tab-pane fade">
+                            <div class="row g-4">
+                                @foreach ($products->where('id_category', $category->id_category) as $product)
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative sweater-item">
+                                            <div class="sweater-img">
+                                                <img src="{{ asset('assets_main/img/sweater-1.png') }}"
+                                                    class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; left: 10px;">{{ $product->category->nama_category }}
+                                            </div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4>{{ $product->nama_product }}</h4>
+                                                <p>{{ $product->deskripsi }}</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp.
+                                                        {{ $product->harga_product }}</p>
+                                                    <a href="#"
+                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach
-                                </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
+
             </div>
         </div>
     </div>
     <!-- Fruits Shop End-->
 
-<<<<<<< HEAD:resources/views/frontend/admin/home.blade.php
-   <!-- Bestsaler Product Start -->
-=======
     <!-- Bestsaler Product Start -->
->>>>>>> 2eacd564e7658831b762697bf8843c9dfcba368d:resources/views/frontend/home.blade.php
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
