@@ -9,6 +9,6 @@ class ReviewController extends Controller
 {
     public function review()
     {
-        return view('frontend.admin.review');
+        return view('frontend.review');
     }
 }
