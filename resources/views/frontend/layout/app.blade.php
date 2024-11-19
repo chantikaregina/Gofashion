@@ -21,7 +21,7 @@
 
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('assets_main/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{ asset('assets_main/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -63,13 +63,7 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="{{ route('cartitem') }}" class="dropdown-item">Keranjang</a>
-                                <a href="{{ route('review') }}" class="dropdown-item">Review</a>
-                            </div>
-                        </div>
+                        <a href="{{ route('review') }}" class="nav-item nav-link active">Review</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <a href="{{route('cartitem') }}" class="position-relative me-4 my-auto">
