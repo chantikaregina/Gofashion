@@ -9,13 +9,13 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-12 col-lg-7">
-                    <h1 class="mb-5 display-3" style="color: #867070;">Fashion and Shopping</h1>
+                    <h1 class="mb-5 display-3" style="color: #FBFBFB;">Fashion and Shopping</h1>
                     <div class="position-relative mx-auto">
-                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
+                        <!-- <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text"
                             placeholder="Search">
                         <button type="submit"
                             class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
-                            style="top: 0; right: 25%;">Submit Now</button>
+                            style="top: 0; right: 25%;">Submit Now</button> -->
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-5">
@@ -27,8 +27,7 @@
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Sweater</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="{{ asset('assets_main/img/jaket-satu.png') }}"
-                                    class="png-fluid w-100 h-100 rounded" alt="Second slide">
+                                <img src="{{ asset('assets_main/img/jaket-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="#" class="btn px-4 py-2 text-white rounded">Jaket</a>
                             </div>
                             <div class="carousel-item rounded">
@@ -356,8 +355,12 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="text-center">
+<<<<<<< HEAD
+                        <img src="{{ asset('assets_main/img/jaket.4.png') }}" class="img-fluid rounded" alt="">
+=======
                         <img src="{{ asset('assets_main/img/sweater.6.png') }}" class="img-fluid rounded"
                             alt="">
+>>>>>>> 8b0b706b7cbb7765c41b0c20e71cd862b0f5d702
                         <div class="py-4">
                             <a href="#" class="h5">Sweater Rajut</a>
                             <div class="d-flex my-3 justify-content-center">
@@ -367,7 +370,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="mb-3">Rp 200.000</h4>
+                            <h4 class="mb-3">Rp 260.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
