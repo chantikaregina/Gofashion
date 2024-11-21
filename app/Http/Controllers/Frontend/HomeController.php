@@ -42,4 +42,9 @@ class HomeController extends Controller
 
         return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId'));
     }
+
+    public function detail()
+    {
+        
+    }
 }
