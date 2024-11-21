@@ -9,7 +9,7 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-12 col-lg-7">
-                    <h1 class="mb-5 display-3" style="color: #867070;">Fashion and Shopping</h1>
+                    <h1 class="mb-5 display-3" style="color: #FBFBFB;">Fashion and Shopping</h1>
                     <div class="position-relative mx-auto">
                     <form method="GET" action="{{ route('home') }}" class="position-relative mx-auto">
                         <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text" name="search" placeholder="Search" value="{{ request('search') }}">
@@ -121,12 +121,14 @@
                                         </div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>{{ $product->nama_product }}</h4>
-                                            <p>{{ $product->deskripsi }}</p>
-                                            <div class="d-flex flex-column justify-content-between flex-lg-wrap">
-                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</p>
-                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
-                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
-                                                </a>
+                                            <p style="margin-bottom: .4rem">{{ $product->deskripsi }}</p>
+                                            <div class="d-flex flex-column justify-content-center flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}
+                                                </p>
+                                                <a href="#"
+                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                    cart</a>
                                             </div>
                                         </div>
                                     </div>
