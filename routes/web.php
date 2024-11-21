@@ -50,3 +50,5 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/cartitem', [CartItemController::class, 'cartitem'])->name('cartitem');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
+
+Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
