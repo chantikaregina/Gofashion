@@ -53,7 +53,7 @@
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand">
+                <a href="{{ route('home')}}" class="navbar-brand">
                     <h1 class="display-6" style="color: #867070;">Gofashion</h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
