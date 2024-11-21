@@ -11,11 +11,10 @@
                 <div class="col-md-12 col-lg-7">
                     <h1 class="mb-5 display-3" style="color: #867070;">Fashion and Shopping</h1>
                     <div class="position-relative mx-auto">
-                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text"
-                            placeholder="Search">
-                        <button type="submit"
-                            class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
-                            style="top: 0; right: 25%;">Submit Now</button>
+                    <form method="GET" action="{{ route('home') }}" class="position-relative mx-auto">
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text" name="search" placeholder="Search" value="{{ request('search') }}">
+                        <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+                    </form>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-5">
@@ -92,47 +91,42 @@
                     <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill"
-                                    data-bs-target="#tab-0">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill {{ !request()->get('category') && !request()->get('search') ? 'active' : '' }}" data-bs-toggle="pill" data-bs-target="#tab-0">
                                     <span class="text-dark" style="width: 130px;">Semua Produk</span>
                                 </a>
                             </li>
-                            @foreach ($categorys as $category)
+                            @foreach ($categories as $category)
                                 <li class="nav-item">
-                                    <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                        data-bs-target="#tab-{{ $category->id_category }}">
-                                        <span class="text-dark"
-                                            style="width: 130px;">{{ $category->nama_category }}</span>
+                                    <a class="d-flex py-2 m-2 bg-light rounded-pill {{ (request()->get('category') == $category->id_category || $selectedCategoryId == $category->id_category) ? 'active' : '' }}" data-bs-toggle="pill" data-bs-target="#tab-{{ $category->id_category }}">
+                                        <span class="text-dark" style="width: 130px;">{{ $category->nama_category }}</span>
                                     </a>
                                 </li>
                             @endforeach
-
                         </ul>
                     </div>
                 </div>
+
                 <div class="tab-content">
                     <!-- Semua Produk -->
-                    <div id="tab-0" class="tab-pane fade show active">
+                    <div id="tab-0" class="tab-pane fade show {{ !request()->get('category') && !request()->get('search') ? 'active' : '' }}">
                         <div class="row g-4">
                             @foreach ($products as $product)
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative sweater-item">
                                         <div class="sweater-img">
-                                            <img src="{{ asset('assets_main/img/sweater-1.png') }}"
-                                                class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="{{ asset('storage/'.$product->foto) }}" class="img-fluid w-100 rounded-top" alt="" style="height: 400px; object-fit: cover;">
                                         </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">{{ $product->category->nama_category }}</div>
+                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
+                                            {{ $product->category->nama_category }}
+                                        </div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>{{ $product->nama_product }}</h4>
                                             <p>{{ $product->deskripsi }}</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ $product->harga_product }}
-                                                </p>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                    cart</a>
+                                            <div class="d-flex flex-column justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</p>
+                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -142,29 +136,26 @@
                     </div>
 
                     <!-- Produk Berdasarkan Kategori -->
-                    @foreach ($categorys as $category)
-                        <div id="tab-{{ $category->id_category }}" class="tab-pane fade">
+                    @foreach ($categories as $category)
+                        <div id="tab-{{ $category->id_category }}" class="tab-pane fade {{ (request()->get('category') == $category->id_category || $selectedCategoryId == $category->id_category) ? 'show active' : '' }}">
                             <div class="row g-4">
-                                @foreach ($products->where('id_category', $category->id_category) as $product)
+                                @foreach ($productsByCategory->get($category->id_category, []) as $product)
                                     <div class="col-md-6 col-lg-4 col-xl-3">
                                         <div class="rounded position-relative sweater-item">
                                             <div class="sweater-img">
-                                                <img src="{{ asset('assets_main/img/sweater-1.png') }}"
-                                                    class="img-fluid w-100 rounded-top" alt="">
+                                                <img src="{{ asset('storage/'.$product->foto) }}" class="img-fluid w-100 rounded-top" alt="" style="height: 400px; object-fit: cover;">
                                             </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                style="top: 10px; left: 10px;">{{ $product->category->nama_category }}
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
+                                                {{ $product->category->nama_category }}
                                             </div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                 <h4>{{ $product->nama_product }}</h4>
                                                 <p>{{ $product->deskripsi }}</p>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp.
-                                                        {{ $product->harga_product }}</p>
-                                                    <a href="#"
-                                                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                        cart</a>
+                                                <div class="d-flex flex-column justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</p>
+                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                        <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -174,7 +165,6 @@
                         </div>
                     @endforeach
                 </div>
-
             </div>
         </div>
     </div>

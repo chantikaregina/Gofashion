@@ -20,7 +20,7 @@ class UserLoginController extends Controller
             'password' => 'required',
         ]);
         if (Auth::attempt($credentials)) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('dashboard');
         }
         return redirect()->back()->withErrors(['login_error' => 'Username atau Password salah']);
     }
