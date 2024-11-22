@@ -43,9 +43,10 @@ class HomeController extends Controller
         return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId'));
     }
 
-    public function detail()
+    public function detail($id_product)
     {
-        
-
+        $product = Product::find($id_product);
+        return view('frontend.detail', compact('product'));
     }
+    
 }
