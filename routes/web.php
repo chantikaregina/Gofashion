@@ -51,4 +51,4 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/cartitem', [CartItemController::class, 'cartitem'])->name('cartitem');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
 
-Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
+Route::get('/detail/{id_product}', [HomeController::class, 'detail'])->name('detail');

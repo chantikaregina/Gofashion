@@ -9,7 +9,7 @@
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6">Testimonial</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
             <li class="breadcrumb-item active text-white">Review</li>
         </ol>
     </div>
@@ -29,9 +29,7 @@
                         <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                             style="bottom: 30px; right: 0;"></i>
                         <div class="mb-4 pb-4 border-bottom border-secondary">
-                            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
-                            </p>
+                            <p class="mb-0">{{ $review->komentar }}</p>
                         </div>
                         <div class="d-flex align-items-center flex-nowrap">
                             <div class="bg-secondary rounded">
@@ -39,7 +37,7 @@
                                     style="width: 100px; height: 100px;" alt="">
                             </div>
                             <div class="ms-4 d-block">
-                                <h4 class="text-dark">Client Name</h4>
+                                <h4 class="text-dark">ahsus</h4>
                                 <p class="m-0 pb-3">Profession</p>
                                 <div class="d-flex pe-5">
                                     <i class="fas fa-star text-primary"></i>

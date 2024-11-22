@@ -120,12 +120,14 @@
                                             {{ $product->category->nama_category }}
                                         </div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <a href="{{ route('detail', $product->id_product) }}">
                                             <h4>{{ $product->nama_product }}</h4>
+                                            </a>
                                             <p style="margin-bottom: .4rem">{{ $product->deskripsi }}</p>
                                             <div class="d-flex flex-column justify-content-center flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}
                                                 </p>
-                                                <a href="#"
+                                                <a href="{{ route('cartitem') }}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
@@ -151,7 +153,9 @@
                                                 {{ $product->category->nama_category }}
                                             </div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <a href="{{ route('detail', $product->id_product) }}">
                                                 <h4>{{ $product->nama_product }}</h4>
+                                                </a>
                                                 <p>{{ $product->deskripsi }}</p>
                                                 <div class="d-flex flex-column justify-content-between flex-lg-wrap">
                                                     <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</p>
