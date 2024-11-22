@@ -65,7 +65,7 @@
                         <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <a href="{{route('cartitem') }}" class="position-relative me-4 my-auto">
+                        <a href="{{route('show.cart') }}" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"

@@ -114,6 +114,14 @@
                                                             <p class="mb-0">250 Kg</p>
                                                         </div>
                                                     </div>
+                                                    <div class="row bg-light text-center align-items-center justify-content-center py-2">
+                                                        <div class="col-6">
+                                                            <p class="mb-0">Stock</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p class="mb-0">{{ $product->stock_product }}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
