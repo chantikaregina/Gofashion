@@ -52,10 +52,10 @@
                             <div class="input-group quantity mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <!-- Form untuk mengurangi jumlah -->
-                                    <form action="{{ route('cart.update', $index) }}" method="POST">
+                                    <form action="{{ route('cart.update', $index) }}" method="POST" class="update-cart-form" data-action="minus">
                                         @csrf
                                         @method('PATCH')
-                                        <button type="submit" class="btn btn-sm btn-minus rounded-circle bg-light border" name="action" value="minus">
+                                        <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border" onclick="submitCartForm(this)">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </form>
@@ -63,10 +63,10 @@
                                 <input type="text" class="form-control form-control-sm text-center border-0" value="{{ $item['quantity'] }}" readonly>
                                 <div class="input-group-btn">
                                     <!-- Form untuk menambah jumlah -->
-                                    <form action="{{ route('cart.update', $index) }}" method="POST">
+                                    <form action="{{ route('cart.update', $index) }}" method="POST" class="update-cart-form" data-action="plus">
                                         @csrf
                                         @method('PATCH')
-                                        <button type="submit" class="btn btn-sm btn-plus rounded-circle bg-light border" name="action" value="plus">
+                                        <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border" onclick="submitCartForm(this)">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </form>
@@ -126,5 +126,18 @@
         </div>
     </div>
     <!-- Cart Page End -->
+    <script>
+        // Fungsi untuk menangani form submit berdasarkan action
+        function submitCartForm(button) {
+            var form = button.closest('form'); // Mendapatkan form terdekat
+            var action = form.getAttribute('data-action'); // Ambil nilai action dari atribut data-action
+            var inputAction = document.createElement('input');
+            inputAction.setAttribute('type', 'hidden');
+            inputAction.setAttribute('name', 'action');
+            inputAction.setAttribute('value', action); // Set value action sebagai minus atau plus
+            form.appendChild(inputAction); // Tambahkan input tersembunyi ke form
+            form.submit(); // Kirimkan form
+        }
+    </script>
 
     @endsection
