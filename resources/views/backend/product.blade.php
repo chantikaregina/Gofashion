@@ -16,7 +16,7 @@
             @endif
             <h6 class="mb-4">Product</h6>
             <div class="table-responsive">
-                <table class="table" id="category">
+                <table class="table" id="product">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
