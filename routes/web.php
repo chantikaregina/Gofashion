@@ -48,7 +48,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/cartitem', [CartItemController::class, 'cartitem'])->name('cartitem');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
+Route::get('/detail/{id_product}', [HomeController::class, 'detail'])->name('detail');
+Route::post('/add_to_cart', [CartItemController::class, 'addtocart'])->name('add.to.cart');
+Route::get('/cart', [CartItemController::class, 'showCart'])->name('show.cart');
 
-Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
+Route::patch('/cart/update/{index}', [CartItemController::class, 'update'])->name('cart.update');
+Route::delete('/cart/delete/{index}', [CartItemController::class, 'delete'])->name('cart.delete');
+
+
