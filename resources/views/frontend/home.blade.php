@@ -23,43 +23,27 @@
                             <div class="carousel-item active rounded">
                                 <img src="{{ asset('assets_main/img/sweater-satu.png') }}" class="img-fluid w-100 h-100 bg-secondary rounded"
                                     alt="First slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Sweater</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/jaket-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Jaket</a>
                             </div>
                             <div class="carousel-item rounded">
-                                <img src="{{ asset('assets_main/img/dress-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Dress</a>
+                                <img src="{{ asset('assets_main/img/dress.1.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/celana-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Celana</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/rok-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Rok</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/hijab-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Hijab</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/blazer-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Blazer</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="{{ asset('assets_main/img/hoodie-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Hoodie</a>
-                            </div>
-                            <div class="carousel-item rounded">
-                                <img src="{{ asset('assets_main/img/sepatu-satu.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Heels</a>
-                            </div>
-                            <div class="carousel-item rounded">
-                                <img src="{{ asset('assets_main/img/sepatu-dua.png') }}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">Sepatu</a>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -110,7 +94,8 @@
                     <!-- Semua Produk -->
                     <div id="tab-0" class="tab-pane fade show {{ !request()->get('category') && !request()->get('search') ? 'active' : '' }}">
                         <div class="row g-4">
-                            @foreach ($products as $product)
+                        @foreach ($oneProductPerCategory as $categoryId => $productsInCategory)
+                            @foreach ($productsInCategory as $product) <!-- Mengakses produk pertama dalam kategori -->
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative sweater-item">
                                         <div class="sweater-img">
@@ -123,17 +108,17 @@
                                             <h4>{{ $product->nama_product }}</h4>
                                             <p style="margin-bottom: .4rem">{{ $product->deskripsi }}</p>
                                             <div class="d-flex flex-column justify-content-center flex-lg-wrap">
-                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}
-                                                </p>
+                                                <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</p>
                                                 <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                    cart</a>
+                                                    class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
+                        @endforeach
                         </div>
                     </div>
 
@@ -185,7 +170,7 @@
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <img src="{{ asset('assets_main/img/dress-satu.png') }}" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset('assets_main/img/dress.1.png') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
                                 <a href="#" class="h5">Dress Blouse</a>
@@ -194,7 +179,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>                          
                                 </div>
                                 <h4 class="mb-3">Rp 240.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -216,7 +201,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>
                                 </div>
                                 <h4 class="mb-3">Rp 200.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -238,7 +223,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>
                                 </div>
                                 <h4 class="mb-3">Rp 200.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -260,7 +245,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>
                                 </div>
                                 <h4 class="mb-3">Rp 230.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -282,7 +267,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>
                                 </div>
                                 <h4 class="mb-3">Rp 220.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -304,7 +289,7 @@
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
                                     <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-primary"></i>
                                 </div>
                                 <h4 class="mb-3">Rp 230.000</h4>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -323,7 +308,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-primary"></i>
                             </div>
                             <h4 class="mb-3">Rp 220.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -335,13 +320,13 @@
                     <div class="text-center">
                         <img src="{{ asset('assets_main/img/jaket.4.png') }}" class="img-fluid rounded" alt="">
                         <div class="py-4">
-                            <a href="#" class="h5">Sweater Rajut</a>
+                            <a href="#" class="h5">jaket</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-primary"></i>
                             </div>
                             <h4 class="mb-3">Rp 260.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -359,7 +344,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-primary"></i>
                             </div>
                             <h4 class="mb-3">Rp 230.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
@@ -377,7 +362,7 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-primary"></i>
                             </div>
                             <h4 class="mb-3">Rp 200.000</h4>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
