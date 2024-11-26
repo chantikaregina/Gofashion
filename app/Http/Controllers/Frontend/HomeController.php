@@ -29,6 +29,11 @@ class HomeController extends Controller
         // Mengelompokkan produk berdasarkan kategori
         $productsByCategory = $products->groupBy('id_category');
 
+       // Ambil hanya 1 produk per kategori
+        $oneProductPerCategory = $productsByCategory->map(function ($productsInCategory) {
+            return $productsInCategory->take(1); // Ambil 1 produk per kategori
+        });
+
         // Tentukan kategori yang relevan dengan pencarian
         $selectedCategory = null;
         if ($search) {
@@ -40,7 +45,7 @@ class HomeController extends Controller
         // Tentukan kategori yang dipilih, jika ada
         $selectedCategoryId = $request->input('category', $selectedCategory ? $selectedCategory->id_category : null);
 
-        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId'));
+        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory'));
     }
 
     public function detail($id_product)
@@ -48,5 +53,4 @@ class HomeController extends Controller
         $product = Product::find($id_product);
         return view('frontend.detail', compact('product'));
     }
-
 }
