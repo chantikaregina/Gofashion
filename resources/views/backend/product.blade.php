@@ -6,7 +6,7 @@
 
 <div class="row g-4">
     <div class="col-12">
-        <div class="bg-light rounded h-100 p-4">
+        <div class="bg-light rounded h-100">
             @if(session('success'))
             <div class="alert alert-success">
                 <div class="text-center">
@@ -25,6 +25,7 @@
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Harga Product</th>
                             <th scope="col">Stock</th>
+                            <th scope="col">Terjual</th>
                             <th scope="col">Foto</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -38,6 +39,7 @@
                             <td>{{ $product->deskripsi }}</td>
                             <td>{{ $product->harga_product }}</td>
                             <td>{{ $product->stock_product }}</td>
+                            <td>{{ $product->jumlah_terjual }}</td>
                             <td>
                                 <img src="{{ asset('storage/'.$product->foto) }}" alt="" width="30">
                             </td>
