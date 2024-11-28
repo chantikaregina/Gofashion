@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->integer('harga_product');
             $table->integer('stock_product');
+            $table->integer('jumlah_terjual')->default(0);
             $table->string('foto', 50);
             $table->timestamps();
         });

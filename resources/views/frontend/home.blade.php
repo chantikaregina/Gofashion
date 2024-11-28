@@ -301,15 +301,15 @@
 
 
 <!-- Banner Section Start-->
-<div class="container-fluid banner my-5" style="background-color: #EADBC8;">
+<div class="container-fluid banner my-5">
     <div class="container py-5">
         <div class="row g-4 align-items-center">
             <div class="col-lg-6">
                 <div class="py-4">
-                    <h1 class="display-3 text-white">Find Your Fashion</h1>
+                    <h1 class="display-4 style="max-width: 700px;>Find Your Fashion</h1>
                     <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
                     <a href="#"
-                        class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                        class="banner-btn btn border-2 border-secondary py-3 px-4" style="top: 0; right: 25%;">BUY</a>
                 </div>
             </div>
             <div class="col-lg-6">
