@@ -4,15 +4,15 @@
 
 @section('content')
 
-<!-- Single Page Header start -->
-<div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Cart</h1>
-    <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-        <li class="breadcrumb-item active text-white">Cart</li>
-    </ol>
-</div>
-<!-- Single Page Header End -->
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Cart</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active text-white">Cart</li>
+        </ol>
+    </div>
+    <!-- Single Page Header End -->
 
 
 <!-- Cart Page Start -->
@@ -52,10 +52,10 @@
                             <div class="input-group quantity mt-4" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <!-- Form untuk mengurangi jumlah -->
-                                    <form action="{{ route('cart.update', $index) }}" method="POST">
+                                    <form action="{{ route('cart.update', $index) }}" method="POST" class="update-cart-form" data-action="minus">
                                         @csrf
                                         @method('PATCH')
-                                        <button type="submit" class="btn btn-sm btn-minus rounded-circle bg-light border" name="action" value="minus">
+                                        <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border" onclick="submitCartForm(this)">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </form>
@@ -63,10 +63,10 @@
                                 <input type="text" class="form-control form-control-sm text-center border-0" value="{{ $item['quantity'] }}" readonly>
                                 <div class="input-group-btn">
                                     <!-- Form untuk menambah jumlah -->
-                                    <form action="{{ route('cart.update', $index) }}" method="POST">
+                                    <form action="{{ route('cart.update', $index) }}" method="POST" class="update-cart-form" data-action="plus">
                                         @csrf
                                         @method('PATCH')
-                                        <button type="submit" class="btn btn-sm btn-plus rounded-circle bg-light border" name="action" value="plus">
+                                        <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border" onclick="submitCartForm(this)">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </form>
@@ -97,34 +97,68 @@
                 </tbody>
             </table>
 
-            @if(session('cart'))
-            <div class="d-flex justify-content-end">
-                <p class="fs-5 fw-bold">Total: Rp. {{ number_format($total, 0, ',', '.') }}</p>
             </div>
-            @endif
 
-        </div>
+            <div class="row g-4 justify-content-end">
+                <div class="col-8"></div>
+                <div class="col-sm-8 col-md-7 col-lg-6 col-xl-12">
+                    <div class="bg-light rounded">
+                        <div class="p-4">
+                            <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
+                            <div class="d-flex justify-content-between mb-4">
+                                <h5 class="mb-0 me-4">Subtotal:</h5>
+                                <p class="mb-0">Rp. {{ number_format($total, 0, ',', '.') }}</p>
+                            </div>
+                            <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
+                                <h5 class="mb-0 ps-4 me-4">Total</h5>
+                                <p class="mb-0 pe-4">Rp. {{ number_format($total, 0, ',', '.') }}</p>
+                            </div>
+                            @php
+                                $whatsappNumber = '6285766642706'; // Ganti dengan nomor tujuan
+                                $cartMessage = "Halo, saya ingin memesan:\n";
+                                if (session('cart')) {
+                                    foreach (session('cart') as $item) {
+                                        $cartMessage .=
+                                            '- ' .
+                                            $item['name'] .
+                                            ' (x' .
+                                            $item['quantity'] .
+                                            '): Rp. ' .
+                                            number_format($item['price'], 0, ',', '.') .
+                                            "\n";
+                                    }
+                                    $cartMessage .= 'Total: Rp. ' . number_format($total, 0, ',', '.') . "\n";
+                                } else {
+                                    $cartMessage .= 'Keranjang saya kosong.';
+                                }
+                                $whatsappUrl = "https://wa.me/$whatsappNumber?text=" . urlencode($cartMessage);
+                            @endphp
 
-        <div class="row g-4 justify-content-end">
-            <div class="col-8"></div>
-            <div class="col-sm-8 col-md-7 col-lg-6 col-xl-12">
-                <div class="bg-light rounded">
-                    <div class="p-4">
-                        <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
-                        <div class="d-flex justify-content-between mb-4">
-                            <h5 class="mb-0 me-4">Subtotal:</h5>
-                            <p class="mb-0">Rp. {{ number_format($total, 0, ',', '.') }}</p>
+                            <button
+                                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                                type="button" onclick="window.location.href='{{ $whatsappUrl }}'">
+                                ORDER WHATSAPP
+                            </button>
                         </div>
-                        <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                            <h5 class="mb-0 ps-4 me-4">Total</h5>
-                            <p class="mb-0 pe-4">Rp. {{ number_format($total, 0, ',', '.') }}</p>
-                        </div>
-                        <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">ORDER WHATSAPP</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Cart Page End -->
     </div>
     <!-- Cart Page End -->
+    <script>
+        // Fungsi untuk menangani form submit berdasarkan action
+        function submitCartForm(button) {
+            var form = button.closest('form'); // Mendapatkan form terdekat
+            var action = form.getAttribute('data-action'); // Ambil nilai action dari atribut data-action
+            var inputAction = document.createElement('input');
+            inputAction.setAttribute('type', 'hidden');
+            inputAction.setAttribute('name', 'action');
+            inputAction.setAttribute('value', action); // Set value action sebagai minus atau plus
+            form.appendChild(inputAction); // Tambahkan input tersembunyi ke form
+            form.submit(); // Kirimkan form
+        }
+    </script>
 
     @endsection
