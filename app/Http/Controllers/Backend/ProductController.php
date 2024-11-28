@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -112,6 +113,23 @@ class ProductController extends Controller
 
         return redirect()->route('product')->with('success', 'Product Berhasil di Hapus.');
     }
+
+    public function review()
+    {
+        $reviews = Review::all();
+        return view('backend.review', compact('reviews'));
+    }
+
+    public function deleteReview(Request $request, $id)
+    {
+        $review = Review::find($id);
+
+        $review->delete();
+
+        return redirect()->route('product.review')->with('success', 'Review Berhasil di Hapus.');
+    }
+
+    
 
 
 }

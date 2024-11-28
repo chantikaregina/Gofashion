@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GOFASHION  - @yield('title')</title>
+  <title>GOFASHION - @yield('title')</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/seodashlogo.png') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +51,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{ route('category') }}" aria-expanded="false">
                 <span>
-                <i class="ti ti-category"></i>
+                  <i class="ti ti-category"></i>
                 </span>
                 <span class="hide-menu">Category</span>
               </a>
@@ -61,9 +65,9 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ route('product.review') }}" aria-expanded="false">
                 <span>
-                <i class="ti ti-brand-onedrive"></i>
+                  <i class="ti ti-brand-onedrive"></i>
                 </span>
                 <span class="hide-menu">Review</span>
               </a>
@@ -71,13 +75,13 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{ route('setting') }}" aria-expanded="false">
                 <span>
-                <i class="ti ti-settings"></i>
+                  <i class="ti ti-settings"></i>
                 </span>
                 <span class="hide-menu">Setting</span>
               </a>
             </li>
 
-        <!-- End Sidebar navigation -->
+            <!-- End Sidebar navigation -->
       </div>
       <!-- End Sidebar scroll-->
     </aside>
@@ -93,7 +97,7 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            
+
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">

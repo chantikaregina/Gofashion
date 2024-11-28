@@ -45,18 +45,19 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/edit/{id_product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id_product}', [ProductController::class, 'delete'])->name('product.delete');
 
+    Route::get('/review', [ProductController::class, 'review'])->name('product.review');
+    Route::get('/review/delete/{id}', [ProductController::class, 'deleteReview'])->name('review.delete');
 });
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/review', [ReviewController::class, 'review'])->name('review');
 
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 
 Route::get('/detail/{id_product}', [HomeController::class, 'detail'])->name('detail');
+Route::post('/detail/review', [HomeController::class, 'review'])->name('review');
+
 Route::post('/add_to_cart', [CartItemController::class, 'addtocart'])->name('add.to.cart');
 Route::get('/cart', [CartItemController::class, 'showCart'])->name('show.cart');
 
 Route::patch('/cart/update/{index}', [CartItemController::class, 'update'])->name('cart.update');
 Route::delete('/cart/delete/{index}', [CartItemController::class, 'delete'])->name('cart.delete');
-
-
