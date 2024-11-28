@@ -46,7 +46,7 @@
         <div class="container topbar d-none d-lg-block" style="background-color: #EADBC8;">
             <div class="d-flex justify-content-center">
                 <div class="top-info ps-2">
-                    <small class="me-3"><i class="me-2 text-secondary"></i> 
+                    <small class="me-3"><i class="me-2 text-secondary"></i>
                         <a href="#" class="text-white">GOFASHION</a></small>
                 </div>
             </div>
