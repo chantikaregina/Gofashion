@@ -46,7 +46,7 @@ class UserController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->back()->with('success', 'Data Anda Berhasil di Update');
+        return redirect()->route('dashboard')->with('success', 'Data Anda Berhasil di Update');
 
 
     }

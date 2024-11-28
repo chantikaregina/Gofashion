@@ -30,6 +30,11 @@ class HomeController extends Controller
         // Mengelompokkan produk berdasarkan kategori
         $productsByCategory = $products->groupBy('id_category');
 
+       // Ambil hanya 1 produk per kategori
+        $oneProductPerCategory = $productsByCategory->map(function ($productsInCategory) {
+            return $productsInCategory->take(1); // Ambil 1 produk per kategori
+        });
+
         // Tentukan kategori yang relevan dengan pencarian
         $selectedCategory = null;
         if ($search) {
@@ -41,7 +46,18 @@ class HomeController extends Controller
         // Tentukan kategori yang dipilih, jika ada
         $selectedCategoryId = $request->input('category', $selectedCategory ? $selectedCategory->id_category : null);
 
-        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId'));
+        // Ambil 3 kategori unik dari produk (pastikan kategori berbeda)
+        $kategori = Product::select('id_category')->distinct()->limit(3)->get();
+
+        // Ambil 1 produk dari setiap kategori yang berbeda
+        $produkKategori = collect();
+
+        foreach ($kategori as $item) {
+            $produk = Product::where('id_category', $item->id_category)->first();
+            $produkKategori->push($produk);
+        }
+
+        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory', 'produkKategori'));
     }
 
     public function detail($id_product)
@@ -73,5 +89,4 @@ class HomeController extends Controller
         // Kembalikan response, misalnya dengan redirect kembali
         return redirect()->back()->with('success', 'Komentar dan rating berhasil dikirim!');
     }
-
 }
