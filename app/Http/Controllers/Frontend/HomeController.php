@@ -45,7 +45,18 @@ class HomeController extends Controller
         // Tentukan kategori yang dipilih, jika ada
         $selectedCategoryId = $request->input('category', $selectedCategory ? $selectedCategory->id_category : null);
 
-        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory'));
+        // Ambil 3 kategori unik dari produk (pastikan kategori berbeda)
+        $kategori = Product::select('id_category')->distinct()->limit(3)->get();
+
+        // Ambil 1 produk dari setiap kategori yang berbeda
+        $produkKategori = collect();
+
+        foreach ($kategori as $item) {
+            $produk = Product::where('id_category', $item->id_category)->first();
+            $produkKategori->push($produk);
+        }
+
+        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory', 'produkKategori'));
     }
 
     public function detail($id_product)
