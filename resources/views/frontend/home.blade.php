@@ -178,9 +178,14 @@
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
                             </div>
-                            <h4 class="mb-3">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</h4>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                            <form action="{{ route('add.to.cart') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_product" value="{{ $product->id_product }}">
+                                <input type="hidden" name="quantity" value="1"> <!-- Default quantity 1, bisa ditambah jika ada input quantity -->
+                                <button type="submit" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to Cart
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
