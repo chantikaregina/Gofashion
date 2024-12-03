@@ -56,7 +56,12 @@ class HomeController extends Controller
             $produkKategori->push($produk);
         }
 
-        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory', 'produkKategori'));
+        // Di Controller Anda
+        $BestsellerProduct = Product::orderBy('jumlah_terjual', 'desc')->take(6)->get();
+
+
+
+        return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory', 'produkKategori', 'BestsellerProduct'));
     }
 
     public function detail($id_product)
