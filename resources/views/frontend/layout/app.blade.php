@@ -69,7 +69,9 @@
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
+                                {{ collect(session('cart', []))->sum('quantity') }}
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -92,8 +94,8 @@
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                        class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    Designed By <a class="border-bottom" href="{{route('home')}}">Gofashion</a> Distributed By <a
+                        class="border-bottom" href="{{route('home')}}">Gofashion</a>
                 </div>
             </div>
         </div>

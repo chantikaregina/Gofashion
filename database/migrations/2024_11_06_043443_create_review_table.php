@@ -21,6 +21,8 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
+            $table->string('nama');
+            $table->string('email');
             $table->integer('rating_produk');
             $table->text('komentar');
             $table->timestamps();
