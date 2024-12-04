@@ -25,7 +25,6 @@
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Harga Product</th>
                             <th scope="col">Stock</th>
-                            <th scope="col">Terjual</th>
                             <th scope="col">Foto</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -39,7 +38,6 @@
                             <td>{{ $product->deskripsi }}</td>
                             <td>{{ $product->harga_product }}</td>
                             <td>{{ $product->stock_product }}</td>
-                            <td>{{ $product->jumlah_terjual }}</td>
                             <td>
                                 <img src="{{ asset('storage/'.$product->foto) }}" alt="" width="30">
                             </td>

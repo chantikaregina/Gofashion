@@ -54,12 +54,16 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="stock_product" class="form-label">Stock</label>
-                                    <input type="text" class="form-control" id="stock_product" name="stock_product">
-                                    <div class="text-danger">
-                                        @error('stock_product')
-                                            {{ $message }}
-                                        @enderror
-                                    </div>
+                                    <select name="stock_product" class="form-control" id="stock_product">
+                                        <option value="">-Pilih-</option>
+                                        <option value="Tersedia">Tersedia</option>
+                                        <option value="Tidak Tersedia">Tidak Tersedia</option>
+                                        <div class="text-danger">
+                                            @error('stock_product')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="foto" class="form-label">Foto</label>
