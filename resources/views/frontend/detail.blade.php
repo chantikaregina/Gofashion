@@ -9,8 +9,7 @@
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6">Shop Detail</h1>
     <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
         <li class="breadcrumb-item active text-white">Shop Detail</li>
     </ol>
 </div>
@@ -33,13 +32,30 @@
                     <div class="col-lg-6">
                         <h4 class="fw-bold mb-3">{{ $product->nama_product }}</h4>
                         <p class="mb-3">Category: {{ $product->category->nama_category }}</p>
+                        <p class="mb-3">Stock: {{ $product->stock_product }}</p>
                         <h5 class="fw-bold mb-3">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</h5>
-                        <div class="d-flex mb-4">
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star"></i>
+                        <div class="d-flex my-3">
+                            @php
+                            // Tentukan jumlah bintang berdasarkan rating rata-rata
+                            $fullStars = floor($product->average_rating); // Bintang penuh
+                            $halfStar = ($product->average_rating - $fullStars) >= 0.5 ? 1 : 0; // Bintang setengah
+                            $emptyStars = 5 - $fullStars - $halfStar; // Bintang kosong
+                            @endphp
+
+                            <!-- Tampilkan bintang penuh -->
+                            @for($i = 0; $i < $fullStars; $i++)
+                                <i class="fas fa-star text-warning"></i>
+                                @endfor
+
+                                <!-- Tampilkan bintang setengah -->
+                                @if($halfStar)
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                @endif
+
+                                <!-- Tampilkan bintang kosong -->
+                                @for($i = 0; $i < $emptyStars; $i++)
+                                    <i class="fas fa-star text-muted"></i>
+                                    @endfor
                         </div>
                         <p class="mb-4">{{ $product->deskripsi }}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
@@ -60,65 +76,13 @@
                     <div class="col-lg-12">
                         <nav>
                             <div class="nav nav-tabs mb-3">
-                                <button class="nav-link active border-white border-bottom-0" type="button" role="tab"
-                                    id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about"
-                                    aria-controls="nav-about" aria-selected="true">Deskripsi</button>
                                 <button class="nav-link border-white border-bottom-0" type="button" role="tab"
                                     id="nav-mission-tab" data-bs-toggle="tab" data-bs-target="#nav-mission"
                                     aria-controls="nav-mission" aria-selected="false">Komentar</button>
                             </div>
                         </nav>
                         <div class="tab-content mb-5">
-                            <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                <p>{{ $product->deskripsi }}</p>
-                                <div class="px-2">
-                                    <div class="row g-4">
-                                        <div class="col-6">
-                                            <div class="row bg-light align-items-center text-center justify-content-center py-2">
-                                                <div class="col-6">
-                                                    <p class="mb-0">Panjang</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p class="mb-0">90cm</p>
-                                                </div>
-                                            </div>
-                                            <div class="row text-center align-items-center justify-content-center py-2">
-                                                <div class="col-6">
-                                                    <p class="mb-0">Lingkar Pinggang</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p class="mb-0">40cm</p>
-                                                </div>
-                                            </div>
-                                            <div class="row bg-light text-center align-items-center justify-content-center py-2">
-                                                <div class="col-6">
-                                                    <p class="mb-0">Lebar</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p class="mb-0">50cm</p>
-                                                </div>
-                                            </div>
-                                            <div class="row text-center align-items-center justify-content-center py-2">
-                                                <div class="col-6">
-                                                    <p class="mb-0">Size</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p class="mb-0">S,M,XL,XXL</p>
-                                                </div>
-                                            </div>
-                                            <div class="row bg-light text-center align-items-center justify-content-center py-2">
-                                                <div class="col-6">
-                                                    <p class="mb-0">Stock</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p class="mb-0">{{ $product->stock_product }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
+                            <div class="tab-pane active" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
                                 @foreach($reviews as $review)
                                 <p class="mb-2" style="font-size: 14px;">{{ $review->created_at }}</p>
                                 <div class="d-flex justify-content-between">
