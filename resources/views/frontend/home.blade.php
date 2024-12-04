@@ -24,7 +24,6 @@
                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }} rounded">
                                 <img src="{{ asset('storage/' . $product->foto) }}" class="img-fluid w-100 h-100 bg-secondary rounded"
                                     alt="Product Slide">
-                                <a href="#" class="btn px-4 py-2 text-white rounded">{{ $product->category->nama_category }}</a>
                             </div>
                         @endforeach
                     </div>

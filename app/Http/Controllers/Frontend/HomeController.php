@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -57,9 +58,11 @@ class HomeController extends Controller
             $produkKategori->push($produk);
         }
 
-        // Di Controller Anda
-        $BestsellerProduct = Product::orderBy('jumlah_terjual', 'desc')->take(6)->get();
-
+        $BestsellerProduct = Product::select('product.*', DB::raw('AVG(review.rating_produk) as average_rating'))
+            ->join('review', 'review.id_product', '=', 'product.id_product')
+            ->groupBy('product.id_product')
+            ->orderByDesc('average_rating')
+            ->get();
 
 
         return view('frontend.home', compact('products', 'productsByCategory', 'categories', 'selectedCategory', 'selectedCategoryId', 'oneProductPerCategory', 'produkKategori', 'BestsellerProduct'));
