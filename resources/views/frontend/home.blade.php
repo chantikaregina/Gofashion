@@ -172,12 +172,29 @@
                         <div class="col-6">
                             <a href="#" class="h5">{{ $product->nama_product }}</a>
                             <div class="d-flex my-3">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
+                                @php
+                                    // Tentukan jumlah bintang berdasarkan rating rata-rata
+                                    $fullStars = floor($product->average_rating);  // Bintang penuh
+                                    $halfStar = ($product->average_rating - $fullStars) >= 0.5 ? 1 : 0; // Bintang setengah
+                                    $emptyStars = 5 - $fullStars - $halfStar;  // Bintang kosong
+                                @endphp
+
+                                <!-- Tampilkan bintang penuh -->
+                                @for($i = 0; $i < $fullStars; $i++)
+                                    <i class="fas fa-star text-primary"></i>
+                                @endfor
+
+                                <!-- Tampilkan bintang setengah -->
+                                @if($halfStar)
+                                    <i class="fas fa-star-half-alt text-primary"></i>
+                                @endif
+
+                                <!-- Tampilkan bintang kosong -->
+                                @for($i = 0; $i < $emptyStars; $i++)
+                                    <i class="fas fa-star text-muted"></i>
+                                @endfor
                             </div>
+
                             <form action="{{ route('add.to.cart') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id_product" value="{{ $product->id_product }}">

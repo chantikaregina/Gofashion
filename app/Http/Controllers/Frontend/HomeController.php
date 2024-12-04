@@ -62,6 +62,7 @@ class HomeController extends Controller
             ->join('review', 'review.id_product', '=', 'product.id_product')
             ->groupBy('product.id_product')
             ->orderByDesc('average_rating')
+            ->take(6)
             ->get();
 
 
