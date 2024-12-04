@@ -72,10 +72,10 @@ class HomeController extends Controller
     public function detail($id_product)
     {
         $product = Product::select('product.*', DB::raw('AVG(review.rating_produk) as average_rating'))
-            ->join('review', 'review.id_product', '=', 'product.id_product')
-            ->where('product.id_product', $id_product) // Menambahkan filter berdasarkan id_product
+            ->leftJoin('review', 'review.id_product', '=', 'product.id_product') // Menggunakan leftJoin
+            ->where('product.id_product', $id_product)
             ->groupBy('product.id_product')
-            ->first(); // Mengambil satu produk berdasarkan id_product
+            ->first();
 
         $reviews = Review::where('id_product', $id_product)->get();
         return view('frontend.detail', compact('product', 'reviews'));
