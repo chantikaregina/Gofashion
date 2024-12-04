@@ -24,7 +24,6 @@
                         <div class="carousel-item {{ $index == 0 ? 'active' : '' }} rounded">
                             <img src="{{ asset('storage/' . $product->foto) }}" class="img-fluid w-100 h-100 bg-secondary rounded"
                                 alt="Product Slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">{{ $product->category->nama_category }}</a>
                         </div>
                         @endforeach
                     </div>
@@ -181,12 +180,12 @@
 
                                 <!-- Tampilkan bintang penuh -->
                                 @for($i = 0; $i < $fullStars; $i++)
-                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-warning"></i>
                                 @endfor
 
                                 <!-- Tampilkan bintang setengah -->
                                 @if($halfStar)
-                                    <i class="fas fa-star-half-alt text-primary"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
                                 @endif
 
                                 <!-- Tampilkan bintang kosong -->
