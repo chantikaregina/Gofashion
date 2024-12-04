@@ -34,12 +34,28 @@
                         <p class="mb-3">Category: {{ $product->category->nama_category }}</p>
                         <p class="mb-3">Stock: {{ $product->stock_product }}</p>
                         <h5 class="fw-bold mb-3">Rp. {{ number_format($product->harga_product, 0, ',', '.') }}</h5>
-                        <div class="d-flex mb-4">
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star"></i>
+                        <div class="d-flex my-3">
+                            @php
+                            // Tentukan jumlah bintang berdasarkan rating rata-rata
+                            $fullStars = floor($product->average_rating); // Bintang penuh
+                            $halfStar = ($product->average_rating - $fullStars) >= 0.5 ? 1 : 0; // Bintang setengah
+                            $emptyStars = 5 - $fullStars - $halfStar; // Bintang kosong
+                            @endphp
+
+                            <!-- Tampilkan bintang penuh -->
+                            @for($i = 0; $i < $fullStars; $i++)
+                                <i class="fas fa-star text-warning"></i>
+                                @endfor
+
+                                <!-- Tampilkan bintang setengah -->
+                                @if($halfStar)
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                @endif
+
+                                <!-- Tampilkan bintang kosong -->
+                                @for($i = 0; $i < $emptyStars; $i++)
+                                    <i class="fas fa-star text-muted"></i>
+                                    @endfor
                         </div>
                         <p class="mb-4">{{ $product->deskripsi }}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
