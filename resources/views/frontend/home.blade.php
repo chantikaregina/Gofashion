@@ -169,7 +169,7 @@
                             <img src="{{ asset('storage/'.$product->foto) }}" class="img-fluid rounded-circle w-100" alt="" style="height: 200px; object-fit: cover;">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">{{ $product->nama_product }}</a>
+                            <a href="{{ route('detail', $product->id_product) }}" class="h5">{{ $product->nama_product }}</a>
                             <div class="d-flex my-3">
                                 @php
                                     // Tentukan jumlah bintang berdasarkan rating rata-rata

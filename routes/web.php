@@ -61,3 +61,4 @@ Route::get('/cart', [CartItemController::class, 'showCart'])->name('show.cart');
 
 Route::patch('/cart/update/{index}', [CartItemController::class, 'update'])->name('cart.update');
 Route::delete('/cart/delete/{index}', [CartItemController::class, 'delete'])->name('cart.delete');
+Route::post('/cart/order/confirm', [CartItemController::class, 'confirmOrder'])->name('cart.order.confirm');

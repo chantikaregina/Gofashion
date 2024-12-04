@@ -53,7 +53,7 @@
         </div>
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="{{ route('home')}}" class="navbar-brand">
+                <a href="{{ route('home') }}" class="navbar-brand">
                     <h1 class="display-6" style="color: #867070;">Gofashion</h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
@@ -65,12 +65,17 @@
                         <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <a href="{{route('show.cart') }}" class="position-relative me-4 my-auto">
+                        <a href="{{ route('show.cart') }}" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
-                                {{ collect(session('cart', []))->sum('quantity') }}
+                                @php
+                                    $cart = json_decode(Cookie::get('cart', '[]'), true);
+                                    $totalQuantity = collect($cart)->sum('quantity');
+                                @endphp
+
+                                {{ $totalQuantity }}
                             </span>
                         </a>
                     </div>
@@ -94,8 +99,8 @@
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="{{route('home')}}">Gofashion</a> Distributed By <a
-                        class="border-bottom" href="{{route('home')}}">Gofashion</a>
+                    Designed By <a class="border-bottom" href="{{ route('home') }}">Gofashion</a> Distributed By <a
+                        class="border-bottom" href="{{ route('home') }}">Gofashion</a>
                 </div>
             </div>
         </div>

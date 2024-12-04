@@ -19,7 +19,9 @@
                                 <select name="id_category" id="id_category" class="form-select">
                                     <option value="">-Pilih-</option>
                                     @foreach ($categorys as $category)
-                                        <option value="{{ $category->id_category }}" {{ $product->id_category == $category->id_category ? 'selected' : '' }}>{{ $category->nama_category }}</option>
+                                        <option value="{{ $category->id_category }}"
+                                            {{ $product->id_category == $category->id_category ? 'selected' : '' }}>
+                                            {{ $category->nama_category }}</option>
                                     @endforeach
                                 </select>
                                 <div class="text-danger">
@@ -58,24 +60,29 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="stock_product" class="form-label">Stock</label>
-                                    <input type="text" class="form-control" id="stock_product" name="stock_product"
-                                        value="{{ old('stock_product', $product->stock_product) }}">
-                                    <div class="text-danger">
-                                        @error('stock_product')
-                                            {{ $message }}
-                                        @enderror
-                                    </div>
+                                    <select name="stock_product" class="form-control" id="stock_product">
+                                        <option value="">-Pilih-</option>
+                                        <option value="Tersedia" {{ $product->stock_product == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                        <option value="Tidak Tersedia" {{ $product->stock_product == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+
+                                        <div class="text-danger">
+                                            @error('stock_product')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+                                    </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="foto" class="form-label">foto</label>
-                                    <input type="file" class="form-control" id="foto" name="foto">
-                                    <div class="text-danger">
-                                        @error('foto')
-                                            {{ $message }}
-                                        @enderror
-                                    </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="foto" class="form-label">foto</label>
+                                <input type="file" class="form-control" id="foto" name="foto">
+                                <div class="text-danger">
+                                    @error('foto')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
                     </div>
                 </div>

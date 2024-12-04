@@ -22,16 +22,16 @@ class HomeController extends Controller
         $products = Product::with('category')
             ->when($search, function ($query, $search) {
                 return $query->where('nama_product', 'like', "%{$search}%")
-                            ->orWhereHas('category', function ($query) use ($search) {
-                                $query->where('nama_category', 'like', "%{$search}%");
-                            });
+                    ->orWhereHas('category', function ($query) use ($search) {
+                        $query->where('nama_category', 'like', "%{$search}%");
+                    });
             })
             ->get();
 
         // Mengelompokkan produk berdasarkan kategori
         $productsByCategory = $products->groupBy('id_category');
 
-       // Ambil hanya 1 produk per kategori
+        // Ambil hanya 1 produk per kategori
         $oneProductPerCategory = $productsByCategory->map(function ($productsInCategory) {
             return $productsInCategory->take(1); // Ambil 1 produk per kategori
         });
@@ -71,9 +71,14 @@ class HomeController extends Controller
 
     public function detail($id_product)
     {
-        $product = Product::find($id_product);
+        $product = Product::select('product.*', DB::raw('AVG(review.rating_produk) as average_rating'))
+            ->join('review', 'review.id_product', '=', 'product.id_product')
+            ->where('product.id_product', $id_product) // Menambahkan filter berdasarkan id_product
+            ->groupBy('product.id_product')
+            ->first(); // Mengambil satu produk berdasarkan id_product
+
         $reviews = Review::where('id_product', $id_product)->get();
-        return view('frontend.detail', compact('product', 'reviews'));     
+        return view('frontend.detail', compact('product', 'reviews'));
     }
 
     public function review(Request $request)
