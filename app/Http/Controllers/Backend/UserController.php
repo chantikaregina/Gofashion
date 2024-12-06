@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,9 @@ class UserController extends Controller
 {
     public function dashboard()
     {
-        return view('backend.dashboard');
+        $jumlah_produk = Product::count();
+        $jumlah_pengguna = User::count();
+        return view('backend.dashboard', compact('jumlah_produk', 'jumlah_pengguna'));
     }
 
     public function logout(Request $request)
