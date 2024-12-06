@@ -42,6 +42,4 @@ class SettingController extends Controller
 
         return redirect()->route('setting')->with('succes', 'Setting Berhasil di Update.');
     }
-
-
 }

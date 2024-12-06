@@ -121,4 +121,6 @@ class CartItemController extends Controller
 
         return redirect()->route('home')->with('success', 'Pesanan berhasil dikonfirmasi dan stok diperbarui.');
     }
+
+    
 }

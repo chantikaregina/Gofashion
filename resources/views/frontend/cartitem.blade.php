@@ -124,7 +124,7 @@
                                 <p class="mb-0 pe-4">Rp. {{ number_format($total, 0, ',', '.') }}</p>
                             </div>
                             @php
-                                $whatsappNumber = '6285766642706'; // Ganti dengan nomor tujuan
+                                $whatsappNumber = $settings['store_phone']; // Ganti dengan nomor tujuan
                                 $cartMessage = "Halo, saya ingin memesan:\n";
                                 if ($cart) {
                                     foreach ($cart as $item) {

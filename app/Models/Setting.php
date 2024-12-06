@@ -10,8 +10,8 @@ class Setting extends Model
     protected  $primaryKey = 'id_setting';
 
     protected $fillable = [
-        'kunci_pengaturan',
-        'nilai_pengaturan',
+        'key',
+        'value',
         'deskripsi',
     ];
 }
