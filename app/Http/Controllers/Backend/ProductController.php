@@ -128,8 +128,4 @@ class ProductController extends Controller
 
         return redirect()->route('product.review')->with('success', 'Review Berhasil di Hapus.');
     }
-
-    
-
-
 }

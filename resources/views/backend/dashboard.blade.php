@@ -10,7 +10,7 @@
                 <div class="card-body p-3">
                     <h5 class="card-title d-flex align-items-center">
                         <h1 style="color: white;">Product</h1>
-                        <small style="color: white; font-size: 15px;">Jumlah Produk</small>
+                        <small style="color: white; font-size: 15px;">Jumlah Produk : {{ $jumlah_produk }}</small>
                     </h5>
                 </div>
                 <div class="card-footer p-1 d-flex justify-content-center" style="background-color: #00ABD6;">
@@ -26,7 +26,7 @@
                 <div class="card-body p-3">
                     <h5 class="card-title d-flex align-items-center">
                         <h1 style="color: white;">Pengguna</h1>
-                        <small style="color: white; font-size: 15px;">Jumlah Pengguna</small>
+                        <small style="color: white; font-size: 15px;">Jumlah Pengguna : {{ $jumlah_pengguna }}</small>
                     </h5>
                 </div>
                 <div class="card-footer p-1 d-flex justify-content-center" style="background-color:  #DD5F4C;">
