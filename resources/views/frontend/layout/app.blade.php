@@ -72,7 +72,7 @@
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">
                                 @php
                                     $cart = json_decode(Cookie::get('cart', '[]'), true);
-                                    $totalQuantity = collect($cart)->sum('quantity');
+                                    $totalQuantity = collect($cart)->count('quantity');
                                 @endphp
 
                                 {{ $totalQuantity }}
