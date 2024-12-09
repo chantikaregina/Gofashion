@@ -18,7 +18,7 @@
     <!-- Cart Page Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="table-responsive">
+            <div class="table-responsive ">
                 <table class="table">
                     <thead>
                         <tr>
@@ -101,7 +101,7 @@
                             @endforeach
                         @else
                             <tr>
-                                <td colspan="5" class="text-center">Keranjang Anda kosong</td>
+                                <td colspan="10" class="text-center">Keranjang Anda kosong</td>
                             </tr>
                         @endif
                     </tbody>
