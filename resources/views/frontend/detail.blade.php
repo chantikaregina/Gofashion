@@ -59,6 +59,7 @@
                                     @endfor
                         </div>
                         <p class="mb-4">{{ $product->deskripsi }}</p>
+                        @if($product->stock_product == 'Tersedia')
                         <div class="input-group quantity mb-5" style="width: 100px;">
                             <div class="input-group-btn">
                                 <button class="btn btn-sm btn-minus rounded-circle bg-light border" type="button" id="btn-minus">
@@ -80,6 +81,14 @@
                                 <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                             </button>
                         </form>
+                        @else
+                        <div>
+                            <button
+                                class="btn border border-secondary rounded-pill px-3 text-primary">
+                                Stock Kosong
+                            </button>
+                        </div>
+                        @endif
                     </div>
                     <div class="col-lg-12">
                         <nav>
