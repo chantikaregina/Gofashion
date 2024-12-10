@@ -15,4 +15,10 @@ class Review extends Model
         'rating_produk',
         'komentar',
     ];
+
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'id_product', 'id_product');
+    }
 }

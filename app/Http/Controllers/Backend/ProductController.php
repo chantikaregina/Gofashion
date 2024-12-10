@@ -31,7 +31,7 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'harga_product' => 'required',
             'stock_product' => 'required',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $foto = null;
@@ -114,18 +114,18 @@ class ProductController extends Controller
         return redirect()->route('product')->with('success', 'Product Berhasil di Hapus.');
     }
 
-    public function review()
+    public function review($id)
     {
-        $reviews = Review::all();
+        $reviews = Review::where('id_product', $id)->get();
         return view('backend.review', compact('reviews'));
     }
 
-    public function deleteReview(Request $request, $id)
+    public function deleteReview(Request $request, $id_product, $id)
     {
         $review = Review::find($id);
 
         $review->delete();
 
-        return redirect()->route('product.review')->with('success', 'Review Berhasil di Hapus.');
+        return redirect()->route('product.review', $id)->with('success', 'Review Berhasil di Hapus.');
     }
 }

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->integer('harga_product');
             $table->enum('stock_product', ['Tersedia', 'Tidak Tersedia']);
-            $table->string('foto', 50);
+            $table->string('foto');
             $table->timestamps();
         });
     }

@@ -18,7 +18,14 @@ class Product extends Model
         'foto',
     ];
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo(Category::class, 'id_category', 'id_category');
+    }
+
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'id_product', 'id_product');
     }
 }

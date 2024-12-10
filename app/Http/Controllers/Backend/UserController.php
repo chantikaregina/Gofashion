@@ -49,7 +49,7 @@ class UserController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Data Anda Berhasil di Update');
+        return redirect()->route('profile')->with('success', 'Data Anda Berhasil di Update');
 
 
     }

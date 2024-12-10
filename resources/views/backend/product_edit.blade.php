@@ -64,17 +64,16 @@
                                         <option value="">-Pilih-</option>
                                         <option value="Tersedia" {{ $product->stock_product == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
                                         <option value="Tidak Tersedia" {{ $product->stock_product == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-
-                                        <div class="text-danger">
-                                            @error('stock_product')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
                                     </select>
+                                    <div class="text-danger">
+                                        @error('stock_product')
+                                            {{ $message }}
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="foto" class="form-label">foto</label>
+                                <label for="foto" class="form-label">Foto</label>
                                 <input type="file" class="form-control" id="foto" name="foto">
                                 <div class="text-danger">
                                     @error('foto')

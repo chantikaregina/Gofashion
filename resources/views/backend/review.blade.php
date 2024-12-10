@@ -40,7 +40,7 @@
                             </td>
                             <td>{{ $review->komentar }}</td>
                             <td>
-                                <a href="{{ route('review.delete', $review->id_review) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
+                                <a href="{{ route('review.delete', ['id_product' => $review->id_product, 'id' => $review->id_review]) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
                             </td>
                         </tr>
                         @endforeach

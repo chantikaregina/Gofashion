@@ -132,9 +132,11 @@
                                             '- ' .
                                             $item['name'] .
                                             ' (x' .
-                                            $item['price'] .
-                                            '): Rp. ' .
+                                            $item['quantity'] .
+                                            ') - Harga Satuan: Rp. ' .
                                             number_format($item['price'], 0, ',', '.') .
+                                            ', Subtotal: Rp. ' .
+                                            number_format($item['price'] * $item['quantity'], 0, ',', '.') .
                                             "\n";
                                     }
                                     $cartMessage .= 'Total: Rp. ' . number_format($total, 0, ',', '.') . "\n";

@@ -45,8 +45,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/product/edit/{id_product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id_product}', [ProductController::class, 'delete'])->name('product.delete');
 
-    Route::get('/review', [ProductController::class, 'review'])->name('product.review');
-    Route::get('/review/delete/{id}', [ProductController::class, 'deleteReview'])->name('review.delete');
+    Route::get('/product/review/{id}', [ProductController::class, 'review'])->name('product.review');
+    Route::get('/product/review/{id_product}/delete/{id}', [ProductController::class, 'deleteReview'])->name('review.delete');
 });
 
 

@@ -44,6 +44,8 @@
                             <td>
                                 <a href="{{ route('product.edit', $product->id_product) }}" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="{{ route('product.delete', $product->id_product) }}"  onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-primary btn-sm">Hapus</a>
+                                <a href="{{ route('product.review', $product->id_product) }}" class="btn btn-primary btn-sm">Review</a>
+
                             </td>
                         </tr>
                         @endforeach

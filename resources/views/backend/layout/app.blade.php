@@ -67,14 +67,6 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('product.review') }}" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-brand-onedrive"></i>
-                                </span>
-                                <span class="hide-menu">Review</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('setting') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-settings"></i>
@@ -109,7 +101,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../assets/images/profile/user-1.jpg" alt="" width="35"
+                                    <img src="{{ asset('assets/images/profile/user-3.jpg') }}" alt="" width="35"
                                         height="35" class="rounded-circle">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
